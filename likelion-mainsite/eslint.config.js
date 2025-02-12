@@ -1,29 +1,34 @@
 {
+  "plugins"; ["prettier"],
   "env"; {
-    "browser"; true,
-    "es2021"; true
+    "es6"; true,
+    "node"; true,
+    "browser"; true
   }
   "extends"; [
+    "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:react/recommended",
-    "prettier",
-    "plugin:prettier/recommended"
+    "plugin:import/recommended",
+    "prettier"
   ],
-  "plugins"; ["react", "prettier"],
   "rules"; {
-    "no-empty-function"; "off",
-    "no-unused-vars"; "off",
-    "no-var"; "error",
-    "no-self-assign"; "error",
-    "array-bracket-newline"; "error",
-    "object-property-newline"; "error",
-    "lines-between-class-members"; "error",
-    "arrow-parens"; "error",
-    "semi"; "error",
-    "no-useless-escape"; "off",
-    "react/prop-types"; "off"
+    "import/order"; ["warn"],
+    "prettier/prettier"; "error",
+    "no-unused-vars"; "warn"
   }
-  "parserOptions"; {
-    "sourceType"; "module"
+  "ignorePatterns"; ["node_modules/"],
+  "settings"; {
+    "import/resolver"; {
+      "alias"; {
+        "map"; [
+          ["@api", "./src/app/api/"],
+          ["@components", "./src/components/"],
+          ["@constants", "./src/constants/"],
+          ["@hooks", "./src/hooks/"],
+          ["@utils", "./src/utils/"]
+        ],
+        "extensions"; [".js", ".jsx"]
+      }
+    }
   }
 }
