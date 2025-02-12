@@ -67,9 +67,21 @@ img {
 
     .navbar_toggleBtn {
         display: block;
+        margin-top: -3px;
     }
 
     .navbar_menu.active {
         display: flex;
+    }
+
+    .likelion_logo {
+        width: 40%; 
+        height: auto;
+    }
+
+    .hamburger_bars_logo {
+        width: 30%;
+        height: auto;
+        margin-top: -1px;
     }
 }

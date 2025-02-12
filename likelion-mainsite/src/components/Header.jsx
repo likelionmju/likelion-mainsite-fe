@@ -16,7 +16,7 @@ const Header = () => {
 		<header>
             <nav className="navbar">
                 <div className="navbar_logo">
-                    <img src={likelion_logo} alt="멋사 로고" />
+                    <img className="likelion_logo" src={likelion_logo} alt="멋사 로고" />
                 </div>
                 <ul className={`navbar_menu ${isMenuActive ? 'active' : ''}`}>
                     <li><a href="">Home</a></li>
@@ -24,7 +24,7 @@ const Header = () => {
                     <li><a href="">Login</a></li>
                 </ul>
                 <a href="#" onClick={toggleMenu} className="navbar_toggleBtn">
-                    <img src={hamburger_bars_icon} alt="햄버거 바 아이콘" />
+                    <img className="hamburger_bars_icon" src={hamburger_bars_icon} alt="햄버거 바 아이콘" />
                 </a>
             </nav>
 		</header>
