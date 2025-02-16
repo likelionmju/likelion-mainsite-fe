@@ -1,0 +1,52 @@
+.part-table-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 55%;
+}
+
+.part-table {
+  width: 100%;
+  text-align: center;
+}
+.part-table-left {
+    padding-right: 1.5em;
+}
+
+.part-table-right {
+    padding-left: 1.5em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 1em;
+  text-align: center;
+  border-bottom: 1px solid #005EB8;
+}
+
+.part-week {
+  color: #005EB8;
+  font-weight: bold;
+}
+
+.part-session {
+  font-weight: bold;
+  color: white;
+}
+
+/* 반응형 (화면이 작을 때 세로로 배치) */
+@media (max-width: 768px) {
+  .part-table-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .part-table {
+    width: 80%;
+  }
+}
