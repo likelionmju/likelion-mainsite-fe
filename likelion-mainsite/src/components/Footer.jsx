@@ -1,6 +1,4 @@
 import './Footer.css';
-import React from 'react';
-import copyright_icon from '../assets/copyright_icon.svg';
 
 const Footer = () => {
 	return (
@@ -19,8 +17,7 @@ const Footer = () => {
 </div>
             <br />
             <div>
-                <img src={copyright_icon} alt="저작권 아이콘" />
-                <p>likelion_MJU | All rights reserved.</p>
+                <p>© likelion_MJU | All rights reserved.</p>
             </div>
 		</footer>
 	);
