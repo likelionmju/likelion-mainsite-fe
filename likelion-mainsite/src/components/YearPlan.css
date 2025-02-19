@@ -1,4 +1,4 @@
-.schedule-container {
+.yearly-plan {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -19,27 +19,35 @@
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;
-    gap: clamp(0rem, 1.5vw, 1.5rem);;
-}
+    gap: 100px;
+    padding: 20px;
+    max-width: 100%;
+    place-items: center;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+  
+  @media (max-width: 768px) {
+    .semester {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      justify-content: center;
+    }
+    .title-text{
+        font-size: 20px;
 
-.schedule-title {
-    font-size: clamp(0.5rem, 4vw, 2.5rem);
-    font-weight: bold;
-    justify-content: center;
-    margin-left: 22%;
-    color: #3274D9;
-}
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .semester {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .title-text{
+        font-size: 18px;
 
-.schedule-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 80%;
-    margin: auto;
-}
-
-.yearlyplan-img {
-    width: 70%;
-    height: auto;
-}
-
+    }
+  }
+  

@@ -1,0 +1,110 @@
+  
+  .semester-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 상하 정렬 */
+    align-items: stretch;
+    width: 100%;
+    max-width: 200px; /* 모든 semester-block의 크기를 동일하게 */
+    min-height: 200px; /* 최소 높이 지정 */
+    gap:10px;
+  }
+
+  .semester-header {
+    background-color: #3383FE;
+    border-top-right-radius: 20px;
+    box-shadow: 5px 5px #335CFE;
+    max-width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .semester-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    gap: 6px;
+    position: relative;
+  }
+  
+  .semester-number {
+    color: #3383FE;
+    font-size: 14px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  .semester-title {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  .event-list {
+    width: 100%;
+    margin-top: 30px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 768px) {
+    
+    .semester-block {
+      max-width: 160px; 
+      min-height: 120px; 
+      padding: 10px;
+    }
+  
+    .semester-header {
+      min-height: 50px;
+      padding: 8px;
+    }
+  
+    .semester-number {
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+    }
+  
+    .semester-title {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+
+    .semester-block {
+      max-width: 140px; 
+      min-height: 110px;
+      padding: 8px;
+    }
+  
+    .semester-header {
+      min-height: 45px;
+      padding: 6px;
+    }
+  
+    .semester-number {
+      width: 16px;
+      height: 16px;
+      font-size: 11px;
+    }
+  
+    .semester-title {
+      font-size: 13px;
+    }
+  }
+  
+
+  
