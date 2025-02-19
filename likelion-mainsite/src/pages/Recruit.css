@@ -110,6 +110,45 @@ textarea {
     margin-top: 20px;
 }
 
+.duplicate-wrapper {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+  }
+
+
+.duplicate-wrapper input {
+    flex: 1; 
+    min-width: 150px;
+  }
+
+.duplicate-wrapper button {
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; 
+    background-color: #3383FE;
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 50px;
+  }
+  
+  .duplicate-wrapper button:hover {
+    background-color: #1d6ed6; 
+    transform: translateY(-2px); 
+  }
+  
+  .duplicate-wrapper button:active {
+    background-color: #155bb5;
+    transform: translateY(0px); 
+  }
+
 footer { 
     margin-top: auto;
     position: relative;

@@ -6,7 +6,9 @@
         "paths": {
             "@/*": ["src/*"] 
         },
-        "types": ["vite/client"]
+        "types": ["vite/client"],
+        "module": "ESNext",
+          "moduleResolution": "node"
     },
     "include": [
         "src/**/*.d.ts", 
@@ -20,3 +22,33 @@
         "dist"
     ]
 }
+
+
+
+
+
+
+
+// {
+//     "compilerOptions": {
+//         "jsx": "react-jsx", 
+//         "checkJs": true,
+//         "baseUrl": ".",
+//         "paths": {
+//             "@/*": ["src/*"] 
+//         },
+//         "types": ["vite/client"],
+//         "module": "ESNext" // 또는 "ES2020", "ES2022" 등으로 설정
+//     },
+//     "include": [
+//         "src/**/*.d.ts", 
+//         "src/**/*.js",    
+//         "src/**/*.jsx",   
+//         "src/**/*.ts"
+//     ],
+//     "exclude": [
+//         "node_modules",  
+//         "**/node_modules",  
+//         "dist"
+//     ]
+// }

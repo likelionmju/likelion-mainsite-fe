@@ -9,49 +9,94 @@ import axiosInstance from '@/libs/api/instance.js';
 
 const RecruitPage = () => {
   const navigate = useNavigate();
+  const [isDuplicate, setIsDuplicate] = useState(null);
+  const [isPasswordDuplicate, setIsPasswordDuplicate] = useState(null);
+
 
   const [name, setName] = useState('');
   const [studentNumber, setStudentNumber] = useState('');
   const [department, setDepartment] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
-  const [militaryService, setMilitaryService] = useState('');
-  const [studentStatus, setStudentStatus] = useState('');
-  const [applicationPart, setApplicationPart] = useState('');
+  const [militaryService, setMilitaryService] = useState('선택해주세요');
+  const [studentStatus, setStudentStatus] = useState('선택해주세요');
+  const [applicationPart, setApplicationPart] = useState('선택해주세요');
   const [firstQuestion, setFirstQuestion] = useState('');
   const [secondQuestion, setSecondQuestion] = useState('');
   const [thirdQuestion, setThirdQuestion] = useState('');
   const [fouthQuestion, setFouthQuestion] = useState('');
   const [fifthQuestion, setFifthQuestion] = useState('');
+  const [agreement, setAgreement] = useState(false);
   const [passWord, setPassWord] = useState('');
   const [inquiry, setInquiry] = useState('');
+
+   const checkDuplicate = async () => {
+    if (!studentNumber) {
+      alert('학번을 입력해주세요.');
+      return;
+    }
+
+    try {
+      const response = await axiosInstance.get(`/api/forms/checkid?studentId=${studentNumber}`);
+      
+      if (response.status === 200) {
+        setIsDuplicate(response.data.data);
+      } else {
+        console.error('서버 응답 오류:', response);
+      }
+    } catch (error) {
+      console.error('중복 검사 요청 실패:', error);
+      alert('중복 검사 중 오류가 발생했습니다.');
+    }
+  };
+
+   const checkPasswordDuplicate = async () => {
+    if (!passWord || passWord.length !== 4) {
+      alert('4자리 숫자로 된 비밀번호를 입력해주세요.');
+      return;
+    }
+
+    try {
+      const response = await axiosInstance.get(`/api/forms/checkpw?queryNumber=${passWord}`);
+
+      if (response.status === 200) {
+        setIsPasswordDuplicate(response.data.data); 
+      } else {
+        console.error('서버 응답 오류:', response);
+      }
+    } catch (error) {
+      console.error('비밀번호 중복 검사 요청 실패:', error);
+      alert('비밀번호 중복 검사 중 오류가 발생했습니다.');
+    }
+  };
 
   const handleSubmit = async () => {
     const userData = {
       name: name,
       studentId: studentNumber,
-      department,
-      phoneNumber,
-      emailAddress,
-      militaryService,
-      studentStatus,
-      applicationPart,
-      firstQuestion,
-      secondQuestion,
-      thirdQuestion,
-      fouthQuestion,
-      fifthQuestion,
-      passWord,
-      inquiry,
+      department: department,
+      phone: phoneNumber,
+      email: emailAddress,
+      militaryStatus: militaryService,
+      enrollmentStatus: studentStatus,
+      rolePreference: applicationPart,
+      selfIntroduction: firstQuestion,
+      learningApproach: secondQuestion,
+      teamworkExperience: thirdQuestion,
+      participationPlan: fouthQuestion,
+      expectations: fifthQuestion,
+	    consent: agreement,
+      queryNumber: passWord,
+      question: inquiry,
     };
 
     try {
-      const response = await axiosInstance.post('/api/users/sign-up', userData);
+      const response = await axiosInstance.post('/api/forms/submit', userData);
       console.log('지원 폼 제출 성공:', response.data);
       navigate('/');
     } catch (error) {
       console.error('지원 폼 제출 실패:', error);
-      // 에러 처리 로직 추가 가능
+      // 에러 처리 로직 추가 
     }
   };
 
@@ -73,7 +118,7 @@ const RecruitPage = () => {
           <br />
         </h2>
         <hr />
-        <form>
+        {/* <form> */}
           <div className="form-group">
             <label
               htmlFor="name"
@@ -99,14 +144,30 @@ const RecruitPage = () => {
               학번{' '}
               <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>
             </label>
-            <input
+            <div className="duplicate-wrapper">
+            <input               
               type="text"
               className="form-control"
               id="studentNumber"
               placeholder="60******"
               required
-              onChange={(e) => setStudentNumber(e.target.value)}
-            />
+              onChange={(e) => setStudentNumber(e.target.value)}>
+            </input>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={checkDuplicate} 
+              style={{ marginTop: '10px' }}
+            >
+              중복 검사
+            </button>
+            </div>
+
+            {isDuplicate !== null && (
+              <p style={{ color: isDuplicate ? 'red' : 'green', marginTop: '10px' }}>
+                {isDuplicate ? '이미 사용 중인 학번입니다.' : '사용 가능한 학번입니다.'}
+              </p>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="username" style={{ color: 'white' }}>
@@ -171,16 +232,17 @@ const RecruitPage = () => {
             <select
               name=""
               id=""
+			  value={militaryService}
               required
               onChange={(e) => setMilitaryService(e.target.value)}
               className="select-control"
             >
-              <option disabled selected>
+              <option value="선택해주세요" disabled>
                 선택해주세요
               </option>
-              <option value="1">미필</option>
-              <option value="2">군필</option>
-              <option value="3">해당 없음</option>
+              <option value="미필">미필</option>
+              <option value="군필">군필</option>
+              <option value="해당 없음">해당 없음</option>
             </select>
           </div>
           <div className="form-group">
@@ -194,16 +256,17 @@ const RecruitPage = () => {
             <select
               name=""
               id=""
+			  value={studentStatus}
               required
               onChange={(e) => setStudentStatus(e.target.value)}
               className="select-control"
             >
-              <option disabled selected>
+              <option value="선택해주세요" disabled >
                 선택해주세요
               </option>
-              <option value="1">재학</option>
-              <option value="2">휴학</option>
-              <option value="3">졸업유예</option>
+              <option value="재학">재학</option>
+              <option value="휴학">휴학</option>
+              <option value="졸업유예">졸업유예</option>
             </select>
           </div>
           <div className="form-group" style={{ marginBottom: '150px' }}>
@@ -217,16 +280,17 @@ const RecruitPage = () => {
             <select
               name=""
               id=""
+			  value={applicationPart}
               required
               onChange={(e) => setApplicationPart(e.target.value)}
               className="select-control"
             >
-              <option disabled selected>
+              <option value="선택해주세요" disabled>
                 선택해주세요
               </option>
-              <option value="1">프론트엔드</option>
-              <option value="2">백엔드</option>
-              <option value="3">미정</option>
+              <option value="프론트엔드">프론트엔드</option>
+              <option value="백엔드">백엔드</option>
+              <option value="미정">미정</option>
             </select>
           </div>
           <hr />
@@ -377,53 +441,66 @@ const RecruitPage = () => {
                     id="agree1"
                     required
                     style={{ height: '20px', width: '20px' }}
+					onChange={(e) => setAgreement(true)}
                   />
                 </label>
               </div>
             </div>
           </div>
           <hr />
-          <div className="form-group" style={{ marginTop: '50px' }}>
-            <label htmlFor="passWord" style={{ color: 'white' }}>
-              비밀번호
-              <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>
-            </label>
-            <p style={{ color: 'white', fontSize: '12px' }}>
-              서류전형 및 면접전형 합격여부 결과 확인용 네자리 비밀번호를
-              만들어주세요.
-            </p>
-            <input
-              type="text"
-              className="form-control"
-              id="passWord"
-              placeholder="XXXX"
-              required
-              onChange={(e) => setPassWord(e.target.value)}
-            />
-          </div>
           <div className="form-group">
-            <label
-              htmlFor="inQuiry"
-              style={{ color: 'white', marginBottom: '20px' }}
-            >
-              문의사항 및 궁금한 점
-            </label>
-            <textarea
-              className="textarea-control"
-              id="inQuiry"
-              placeholder="답변을 입력해주세요"
-              onChange={(e) => setInquiry(e.target.value)}
-            />
+          <label htmlFor="passWord" style={{ color: 'white' }}>
+            비밀번호
+            <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>
+          </label>
+          <p style={{ color: 'white', fontSize: '12px' }}>
+            서류전형 및 면접전형 합격여부 결과 확인용 네자리 비밀번호를 만들어주세요.
+          </p>
+          <div className="duplicate-wrapper">
+          <input
+            type="text"
+            className="form-control"
+            id="passWord"
+            placeholder="XXXX"
+            required
+            onChange={(e) => setPassWord(e.target.value)}
+          />
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={checkPasswordDuplicate}
+          >
+            중복 검사
+          </button>
           </div>
-        </form>
-        {/* <Button text={'지원서 제출'} type={onsubmit} onClick={handleSubmit} /> */}
-        <Button type={onsubmit} onClick={handleSubmit}>
-          지원서 제출
-        </Button>
+          {isPasswordDuplicate !== null && (
+            <p style={{ color: isPasswordDuplicate ? 'red' : 'green', marginTop: '10px' }}>
+              {isPasswordDuplicate ? '이미 사용 중인 비밀번호입니다.' : '사용 가능한 비밀번호입니다.'}
+            </p>
+          )}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="inQuiry" style={{ color: 'white', marginBottom: '20px' }}>
+            문의사항 및 궁금한 점
+          </label>
+          <textarea
+            className="textarea-control"
+            id="inQuiry"
+            placeholder="답변을 입력해주세요"
+            onChange={(e) => setInquiry(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <Button type="submit" onClick={handleSubmit}>
+            지원서 제출
+          </Button>
+        </div>
       </div>
+
       <Footer />
     </div>
-  );
-};
+);
+}
 
 export default RecruitPage;

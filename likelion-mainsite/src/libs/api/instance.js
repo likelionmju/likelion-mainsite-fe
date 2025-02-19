@@ -2,7 +2,7 @@ import axios from 'axios';
 import process from 'process';
 
 const axiosInstance = axios.create({
-    baseURL: '', // import.meta.env.VITE_PUBLIC_URL || ''
+    baseURL: import.meta.env.VITE_PUBLIC_URL || '',
     timeout: 10000,
 });
 
