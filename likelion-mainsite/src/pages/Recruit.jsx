@@ -433,17 +433,17 @@ const RecruitPage = () => {
               <div className="checkbox-wrapper">
                 <label
                   htmlFor="agree1"
-                  style={{ color: 'white', marginBottom: '20px' }}
+                  style={{ color: 'white' }}
                 >
                   개인정보 수집 및 이용에 동의합니다.
-                  <input
+                </label>
+                <input
                     type="checkbox"
                     id="agree1"
                     required
-                    style={{ height: '20px', width: '20px' }}
+                    style={{ height: '20px', width: '20px', margin: 'initial' }}
 					onChange={(e) => setAgreement(true)}
                   />
-                </label>
               </div>
             </div>
           </div>
