@@ -1,6 +1,23 @@
 .schedule-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+  
+  .title-text {
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: left;
+    color: #3274D9;
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  .semester {
+    display: flex;
+    flex-wrap: wrap; 
     justify-content: center;
     gap: clamp(0rem, 1.5vw, 1.5rem);;
 }
