@@ -16,6 +16,10 @@ const RecruitPage = () => {
   const [isDuplicate, setIsDuplicate] = useState(null);
   const [isPasswordDuplicate, setIsPasswordDuplicate] = useState(null);
 
+  // 중복 검사 완료 여부 상태
+  const [isDuplicateChecked, setIsDuplicateChecked] = useState(false);
+  const [isPasswordChecked, setIsPasswordChecked] = useState(false);
+
   // 개별적인 유효성 검사 상태
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidStudentNumber, setIsValidStudentNumber] = useState(true);
@@ -61,7 +65,9 @@ const RecruitPage = () => {
       !isValidEmail ||
       !isValidStudentNumber ||
       !isValidPhoneNumber ||
-      !isNumericPassword
+      !isNumericPassword ||
+      !isDuplicateChecked ||
+      !isPasswordChecked  
     ) {
       return false;
     }
@@ -105,6 +111,7 @@ const RecruitPage = () => {
       
       if (response.status === 200) {
         setIsDuplicate(response.data.data);
+        setIsDuplicateChecked(true);
       } else {
         console.error('서버 응답 오류:', response);
       }
@@ -125,6 +132,7 @@ const RecruitPage = () => {
 
       if (response.status === 200) {
         setIsPasswordDuplicate(response.data.data); 
+        setIsPasswordChecked(true);
       } else {
         console.error('서버 응답 오류:', response);
       }
