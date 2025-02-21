@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #051C47;
+}
+
+.form-wrapper {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    background-color: #051C47;
+    border-radius: 10px;
+    padding-top: 150px;
+    margin-bottom: 200px;
+}
+
+h2 {
+    margin-bottom: 100px;
+}
+
+form {
+    margin-top: 70px;
+}
+
+.form-description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+small {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+input, select, .textarea-control {
+    display: inline-block;
+    width: calc(100%-20px);
+    height: 50px;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    padding: 20px;
+}
+
+.select-control {
+    width: 101%;
+    height: 60px;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-size: 15px;
+    color: #808080;
+    background-color: white;
+    padding-left: 20px;
+}
+
+.information-collection-box {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-size: 15px;
+    color: black;
+    padding: 20px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.duplicate-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.duplicate-wrapper input {
+    flex: 1;
+    min-width: 150px;
+    margin: initial;
+}
+
+.duplicate-wrapper button {
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    background-color: #3383FE;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    margin: initial;
+}
+
+.duplicate-wrapper button:hover {
+    background-color: #1d6ed6;
+    transform: translateY(-2px);
+}
+
+.duplicate-wrapper button:active {
+    background-color: #155bb5;
+    transform: translateY(0px);
+}
+
+footer {
+    margin-top: auto;
+    position: relative;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .form-wrapper {
+        width: 70%;
+        padding: 20px;
+        padding-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .form-description {
+        font-size: 32px;
+    }
+
+    input, select, .textarea-control {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .duplicate-wrapper button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        width: 80%;
+        padding: 15px;
+        padding-top: 80px;
+        margin-bottom: 50px;
+    }
+
+    .form-description {
+        font-size: 28px;
+    }
+
+    input, select, .textarea-control {
+        display: inline-block;
+
+        height: 55px;
+        font-size: 13px;
+    }
+
+    .duplicate-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .duplicate-wrapper input {
+        display: inline-block;
+        width: calc(100% - 20px);
+        line-height: 55px;
+        height: initial;
+    }
+
+    .duplicate-wrapper button {
+        width: 100%;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .information-collection-box {
+        display: inline-block;
+        width: calc(100% - 40px);
+    }
+}
