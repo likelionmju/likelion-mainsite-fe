@@ -11,5 +11,15 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
-  }
+  },
+  plugins: [react()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://54.180.159.45:8080', // 백엔드 서버 주소로 변경
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });
