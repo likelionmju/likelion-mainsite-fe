@@ -8,12 +8,12 @@ import Card from '@/components/Card';
 import fire_icon from '../assets/fire_icon.svg';
 import chat_icon from '../assets/chat_icon.svg';
 import crown_icon from '../assets/crown_icon.svg';
+import Part from '@/components/Part';
 
 const Home = () => {
 	return (
 		<div className="Home">
 			<Header />
-			
 			{/* 배너 */}
 			<div className="banner">
 				<img className="character" src={character} />
@@ -69,7 +69,7 @@ const Home = () => {
 					/>
 				</div>
 			</div>
-
+			<Part/>
 			<Footer />
 		</div>
 	);

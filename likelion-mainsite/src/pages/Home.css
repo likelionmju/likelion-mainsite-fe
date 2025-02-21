@@ -5,10 +5,12 @@
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    background-color: #051c47;
 }
 
 Footer {
     margin-top: auto;
+    position: relative;
 }
 
 .banner {
