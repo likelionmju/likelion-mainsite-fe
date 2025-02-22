@@ -1,3 +1,14 @@
+/* .part-title {
+    color: #3274D9;
+    font-family: "Gmarket Sans TTF";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 8.4rem;
+    margin-left: 13.12rem;
+    margin-bottom: 4rem;
+} */
+
 .part-title {
     color: #3274D9;
     font-size: 2rem;
@@ -7,7 +18,7 @@
 }
 
 .part-container {
-    background-color: #071D49;
+    /* background-color: #051C47; */
     width: 100%;
     flex-direction: column;
     display: flex;
@@ -18,12 +29,30 @@
     margin: 0 auto;
 }
 
+/* .part-box {
+    display: flex;
+    width: 95rem;
+    height: 6rem;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 5px solid #3274D9;
+} */
+
 .part-box {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #005EB8;
     padding-bottom: 1%;
 }
+
+/* .part-subtitle{
+    color: #3274D9;
+    font-family: Inter;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+} */
 
 .part-subtitle{
     font-size: 1.4rem;

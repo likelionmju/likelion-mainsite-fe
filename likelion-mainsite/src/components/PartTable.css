@@ -9,7 +9,7 @@
 }
 
 table {
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
   height: 100%;
 }
@@ -23,7 +23,7 @@ tbody {
 th, td {
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #005EB8;
+  border-bottom: 2px solid #005EB8;
   padding: 1em 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -37,8 +37,17 @@ tr {
   flex: 1;
 }
 
+/* .part-week {
+  color: #3274D9;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+} */
+
 .part-week {
-  color: #005EB8;
+  color: #3274D9;
   font-weight: bold;
   white-space: nowrap;
   display: flex;
@@ -57,11 +66,21 @@ tr {
   flex: 1;
 }
 
+/* .part-session, .part-session2 {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+} */
+
 .part-session2 {
   visibility: hidden;
   overflow: hidden;
   display: none;
 }
+
 
 @media (max-width: 768px){
 
