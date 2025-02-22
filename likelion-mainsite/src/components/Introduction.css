@@ -19,7 +19,7 @@
 .introduction-box-list-container{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 2%;
+    margin-bottom: 10%;
 }
 
 @media (max-width: 768px){

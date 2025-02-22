@@ -37,43 +37,50 @@ tr {
   flex: 1;
 }
 
-.part-week {
-  /* color: #005EB8;
-  font-weight: bold;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0.5; */
+/* .part-week {
   color: #3274D9;
   font-family: Inter;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+} */
+
+.part-week {
+  color: #3274D9;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
 }
 
 .part-session, .part-session2 {
-  /* display: flex;
+  display: flex;
   font-weight: bold;
   color: white;
   white-space: nowrap;
   align-content: center;
   justify-content: center;
-  flex: 1; */
+  flex: 1;
+}
+
+/* .part-session, .part-session2 {
   color: #FFF;
   font-family: Inter;
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-}
+} */
 
 .part-session2 {
   visibility: hidden;
   overflow: hidden;
   display: none;
 }
+
 
 @media (max-width: 768px){
 

@@ -5,7 +5,8 @@
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    background-color: #051c47;
+    /* background-color: #051C47; */
+    background-color: #071C49;
 }
 
 Footer {
@@ -13,43 +14,6 @@ Footer {
     position: relative;
 }
 
-.banner {
-    background-image: url('../assets/banner.svg');
-    min-height: 100vh;
-    min-width: 99vw;
-    position: relative;
-}
-
-.banner_title_container {
-    display: flex;
-    align-items: center;
-    margin-left: 50rem;
-    margin-top: 10rem;
-}
-
-.character {
-    width: 15.125rem;
-    height: 14.91919rem;
-    /* position: absolute;
-    top: 20%;
-    left: 90%;
-    transform: translate(-50%, -50%); */
-    margin: 0;
-}
-
-.banner_title {
-    /* position: absolute; */
-    color: #FFF;
-    font-family: Audiowide;
-    font-size: 4.5rem;
-    font-style: normal;
-    font-weight: var(--sds-typography-weight-bold);
-    line-height: 110%; /* 121px */
-    /* top: 18%;
-    left: 40%; */
-    margin: 0;
-    white-space: nowrap;
-}
 
 .why {
     background: #051C47;
@@ -163,20 +127,20 @@ Footer {
 }
 
 @media (max-width: 820px) {
-    .banner{
+    /* .banner{
         min-width: 98vw;
     }
     
     .banner_title_container {
         margin-left: 13rem;
-    }
+    } */
 
-    .banner_title {
-        font-size: 250%;
+    /* .banner_title {
+        font-size: 250%; */
         /* top: 15%;
         left: 25%;
         text-align: right; */
-    }
+    /* } */
 
     .character {
         width: 12rem;
@@ -220,25 +184,29 @@ Footer {
 }
 
 @media (max-width: 540px) {
-    .banner_title_container {
+    /* .banner_title_container {
         flex-direction: column;
         margin-left: 0.5rem;
         margin-top: 3rem;
-    }
+    } */
 
-    .banner_title {
-        font-size: 2rem;
+    /* .banner_title { */
+        /* font-size: 2rem; */
+        /*  */
         /* top: 18%;
         left: 10%; */
-    }
+        /*  */
+    /* } */
 
-    .character {
-        width: 9rem;
-        height: auto;
-        margin-left: 12rem;
+    /* .character { */
+        /* width: 9rem; */
+        /* height: auto; */
+        /* margin-left: 12rem; */
+        /*  */
         /* top: 17%;
         left: 84%; */
-    }
+        /*  */
+    /* } */
 /* 
     button {
         width: 30%;
