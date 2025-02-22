@@ -22,7 +22,6 @@ const Banner = ({character}) => {
             {/* <img className="character" src={character} />
             <p className="banner_title">LIKELION MJU</p> */}
             <Apply />
-            <Introduction/>
         </div>
     );
 };

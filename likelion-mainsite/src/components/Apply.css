@@ -44,10 +44,12 @@
     height: 4rem;
     color: #FFF;
     text-align: center;
-    font-family: Inter;
+    /* font-family: Inter; */
+    font-family: Pretendard;
     font-size: 1.7rem;
     font-style: normal;
-    font-weight: 700;
+    /* font-weight: 700; */
+    font-weight: 500;
     line-height: 2.16563rem; /* 86.625% */
     /* position: absolute; */
     /* top: 70%; */

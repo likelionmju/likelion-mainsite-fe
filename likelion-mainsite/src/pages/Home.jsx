@@ -27,6 +27,7 @@ const Home = () => {
 			{/* <Header /> */}
 			{/* 배너 */}
 			<Banner character={character} />
+			<Introduction/>
 			{/* <Introduction/> */}
 			{/* <div className="banner">
 				<div className="banner_title_container">

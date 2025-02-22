@@ -1,13 +1,13 @@
 
 .banner {
     width: 100%;
-    background-image: url('../assets/banner3.svg');
+    /* background-image: url('../assets/banner3.svg'); */
     /* min-height: 100vh; */
     min-width: 99vw;
     /* position: relative; */
     /*  */
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+    /* background-size: 100% auto; */
+    /* background-repeat: no-repeat; */
 }
 
 .banner_title_container {
