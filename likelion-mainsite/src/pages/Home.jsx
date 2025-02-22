@@ -22,7 +22,6 @@ const Home = () => {
 	return (
 		<div className="Home">
 			<Header />
-
 			{/* 배너 */}
 			<div className="banner">
 				<div className="banner_title_container">
