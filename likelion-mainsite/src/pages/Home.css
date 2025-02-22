@@ -41,6 +41,47 @@ Footer {
     left: 40%;
 }
 
+.why {
+    background: #051C47;
+    position: relative;
+    height: 100vh;
+}
+
+.why_title {
+    color: #3274D9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-family: "Gmarket Sans TTF";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 8.4rem; /* 140% */
+    position: absolute;
+    margin-left: 13.12rem;
+}
+
+.why_exp {
+    color: #FFF;
+    font-family: "Gmarket Sans TTF";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3rem; /* 170.667% */
+    white-space: pre-line;
+    position: absolute;
+    transform: translate(-10%, -10%);
+    left: 18%;
+    top: 25%;
+}
+
+.why_div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20rem;
+}
+
 .right_people {
     background: #051C47;
     position: relative;
@@ -76,6 +117,39 @@ Footer {
     justify-content: space-evenly;
     width: 100%;
     margin-top: 3rem;
+}
+
+.recruit_date {
+    background: #051C47;
+    position: relative;
+    height: 100vh;
+}
+
+.recruit_date_title {
+    color: #3274D9;
+    font-family: "Gmarket Sans TTF";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 8.4rem; /* 140% */
+    position: absolute;
+    margin-left: 13.12rem;
+}
+
+.recruit_date_line {
+    width: 90rem;
+    height: 8.4375rem;
+    position: absolute;
+    transform: translate(-10%, -10%);
+    left: 16%;
+    top: 35%;
+}
+
+.recruit_date_div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 25rem;
 }
 
 @media (max-width: 768px) {
