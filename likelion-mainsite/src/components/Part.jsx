@@ -12,7 +12,7 @@ const Part = () => {
 
     return (
         <div className="part-container">
-            <div className='part-title'>파트별 소개</div>
+            <div className='part-title'>파트별 커리큘럼</div>
             <div className='part-box-container'>
                 <div className='part-box'>
                     <div className={`part-subtitle ${part === 'web' ? 'active-part' : ''}`} onClick={() => handlePartChange("web")}>웹</div>

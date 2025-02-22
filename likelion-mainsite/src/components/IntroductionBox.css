@@ -1,0 +1,40 @@
+.introduction-box-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction-box-img {
+    width: 55%;
+    height: auto;
+}
+
+.introduction-box-content {
+    color: white;
+    line-height : 1.7em;
+}
+
+.introduction-box-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.introduction-box-content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px){
+    .introduction-box-content {
+        font-size: 0.8rem;
+   }
+    .introduction-box-img {
+        width: 75%;
+    }
+} 
+
+@media (max-width: 480px){
+   .introduction-box-content {
+        font-size: 0.4rem;
+   }
+}
