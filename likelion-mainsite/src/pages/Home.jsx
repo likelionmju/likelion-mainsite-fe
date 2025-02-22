@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './Home.css';
+import YearPlan from '@/components/YearPlan';
 import character from '../assets/character.svg'
 import Apply from '@/components/Apply';
 import Card from '@/components/Card';
@@ -21,15 +22,20 @@ const Home = () => {
 	return (
 		<div className="Home">
 			<Header />
+
 			{/* 배너 */}
 			<div className="banner">
-				<img className="character" src={character} />
-				<p className="banner_title">LIKELION MJU</p>
+				<div className="banner_title_container">
+					<img className="character" src={character} />
+					<p className="banner_title">LIKELION MJU</p>
+				</div>
+				{/* <img className="character" src={character} />
+				<p className="banner_title">LIKELION MJU</p> */}
 				<Apply />
 			</div>
 
 			{/* 멋사 소개 */}
-			<div className="why">
+			{/* <div className="why">
 				<p className="why_title">왜 멋쟁이사자처럼인가요?</p>
 				<p className="why_exp">멋쟁이사자처럼은 IT 서비스 구축을 위한 웹 프로그래밍을 학습하는<br />전국 최대 규모의 IT 연합 동아리입니다.</p>
 				<div className="why_div">
@@ -54,13 +60,16 @@ const Home = () => {
 							시작할 수 있는 동아리`}
 					/>
 				</div>
-			</div>
+			</div> */}
 			
 			{/* 파트별 소개 */}
-			<Part/>
+			{/* <Part/> */}
+
+			{/* 연간 일정 */}
+			{/* <YearPlan /> */}
 
 			{/* 인재상 */}
-			<div className="right_people">
+			{/* <div className="right_people">
 				<p className="right_people_title">인재상</p>
 				<p className="right_people_exp">명지대 멋쟁이사자처럼에서는 이런 아기사자들을 찾아요!</p>
 				<div className="card_div">
@@ -106,10 +115,10 @@ const Home = () => {
 						}
 					/>
 				</div>
-			</div>
+			</div> */}
 
 			{/* 모집 일정 */}
-			<div className="recruit_date">
+			{/* <div className="recruit_date">
 				<p className="recruit_date_title">모집 일정</p>
 				<img className="recruit_date_line"  src={recruit_date_line} />
 				<div className="recruit_date_div">
@@ -131,7 +140,7 @@ const Home = () => {
 						content_medium="3/15"
 					/>
 				</div>
-			</div>
+			</div> */}
 
 			<Footer />
 		</div>
