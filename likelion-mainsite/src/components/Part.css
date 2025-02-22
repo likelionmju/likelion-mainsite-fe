@@ -1,13 +1,16 @@
 .part-title {
     color: #3274D9;
-    font-size: 2rem;
-    font-weight: bold;
-    width: 90%;
-    margin: 3% auto;
+    font-family: "Gmarket Sans TTF";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 8.4rem; /* 140% */
+    margin-left: 13.12rem;
+    margin-bottom: 4rem;
 }
 
 .part-container {
-    background-color: #071D49;
+    background-color: #051C47;
     width: 100%;
     flex-direction: column;
     display: flex;
@@ -19,19 +22,32 @@
 }
 
 .part-box {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #005EB8;
-    padding-bottom: 1%;
+    padding-bottom: 1%; */
+    display: flex;
+    width: 95rem;
+    height: 6rem;
+    /* padding: 1.25rem 31.25rem 1.25rem 9.375rem; */
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 5px solid #3274D9;
 }
 
 .part-subtitle{
-    font-size: 1.4rem;
+    /* font-size: 1.4rem;
     font-weight: 500;
-    color: #005EB8;
+    color: #3274D9;
     width: 48%;
     padding-left: 8.5%;
-    cursor: pointer;
+    cursor: pointer; */
+    color: #3274D9;
+    font-family: Inter;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .part-subtitle:hover{

@@ -1,0 +1,34 @@
+.recruit_date_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recruit_date_content_bold {
+    color: #FFF;
+    font-family: "Gmarket Sans TTF";
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 2.25rem;
+}
+
+.recruit_date_box {
+    display: flex;
+}
+
+.recruit_date_content_medium {
+    color: #FFF;
+    font-family: "Gmarket Sans TTF";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.recruit_date_content_light {
+    color: #FFF;
+    font-family: "Gmarket Sans TTF";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 300;
+}

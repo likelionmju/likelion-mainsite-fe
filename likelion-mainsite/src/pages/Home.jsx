@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './Home.css';
+import YearPlan from '@/components/YearPlan';
 import character from '../assets/character.svg'
 import Apply from '@/components/Apply';
 import Card from '@/components/Card';
@@ -9,23 +10,65 @@ import fire_icon from '../assets/fire_icon.svg';
 import chat_icon from '../assets/chat_icon.svg';
 import crown_icon from '../assets/crown_icon.svg';
 import Part from '@/components/Part';
-import Introduction from '@/components/Introduction';
+import Why from '@/components/Why';
+import gift_icon from "../assets/gift_icon.svg";
+import noti_icon from "../assets/noti_icon.svg";
+import monitor_icon from "../assets/monitor_icon.svg";
+import heart_icon from "../assets/heart_icon.svg";
+import recruit_date_line from "../assets/recruit_date_line.svg";
+import RecruitDate from '@/components/RecruitDate';
 
 const Home = () => {
 	return (
 		<div className="Home">
 			<Header />
-			<Introduction />
-    
 			{/* 배너 */}
 			<div className="banner">
-				<img className="character" src={character} />
-				<p className="banner_title">LIKELION MJU</p>
+				<div className="banner_title_container">
+					<img className="character" src={character} />
+					<p className="banner_title">LIKELION MJU</p>
+				</div>
+				{/* <img className="character" src={character} />
+				<p className="banner_title">LIKELION MJU</p> */}
 				<Apply />
 			</div>
 
+			{/* 멋사 소개 */}
+			{/* <div className="why">
+				<p className="why_title">왜 멋쟁이사자처럼인가요?</p>
+				<p className="why_exp">멋쟁이사자처럼은 IT 서비스 구축을 위한 웹 프로그래밍을 학습하는<br />전국 최대 규모의 IT 연합 동아리입니다.</p>
+				<div className="why_div">
+					<Why
+						img={gift_icon}
+						content={`Techit 강의
+							무제한 무료 제공`}
+					/>
+					<Why
+						img={noti_icon}
+						content={`타학교 및 현직자와의
+							네트워킹 기회`}
+					/>
+					<Why
+						img={monitor_icon}
+						content={`전국 최대 규모의
+							아이디어톤과 해커톤`}
+					/>
+					<Why
+						img={heart_icon}
+						content={`비전공자도 
+							시작할 수 있는 동아리`}
+					/>
+				</div>
+			</div> */}
+			
+			{/* 파트별 소개 */}
+			{/* <Part/> */}
+
+			{/* 연간 일정 */}
+			{/* <YearPlan /> */}
+
 			{/* 인재상 */}
-			<div className="right_people">
+			{/* <div className="right_people">
 				<p className="right_people_title">인재상</p>
 				<p className="right_people_exp">명지대 멋쟁이사자처럼에서는 이런 아기사자들을 찾아요!</p>
 				<div className="card_div">
@@ -71,8 +114,33 @@ const Home = () => {
 						}
 					/>
 				</div>
-			</div>
-			<Part/>
+			</div> */}
+
+			{/* 모집 일정 */}
+			{/* <div className="recruit_date">
+				<p className="recruit_date_title">모집 일정</p>
+				<img className="recruit_date_line"  src={recruit_date_line} />
+				<div className="recruit_date_div">
+					<RecruitDate
+						content_bold="서류 모집"
+						content_medium="2/24 ~ 3/9"
+					/>
+					<RecruitDate
+						content_bold="서류 발표"
+						content_medium="3/10"
+						content_light="(17:00 이내)"
+					/>
+					<RecruitDate
+						content_bold="면접"
+						content_medium="3/12 ~ 3/14"
+					/>
+					<RecruitDate
+						content_bold="합격자 발표"
+						content_medium="3/15"
+					/>
+				</div>
+			</div> */}
+
 			<Footer />
 		</div>
 	);
