@@ -19,6 +19,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/checkresult" element={<CheckResult />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/*" element={<Home />} />
         
         {/* 관리자 전용 페이지 - AdminRoute로 보호 */}
         <Route element={<AdminRoute />}>
