@@ -184,12 +184,12 @@ const RecruitPage = () => {
     <div className="application">
       <Header />
       <div className="form-wrapper">
-        <h2>
+        <h2 className="form-description-wrapper">
           <strong className="form-description">
             멋쟁이사자처럼 13기 아기사자 지원서
           </strong>
           <br />
-          <small>(2025.02.24 ~ 2025.03.07)</small>
+          <small>(2025.02.26 ~ 2025.03.07)</small>
           <br />
           <small className="form-guide">
             <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>{' '}
@@ -560,24 +560,7 @@ const RecruitPage = () => {
             required
             onChange={handlePasswordChange}
           />
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={checkPasswordDuplicate}
-          >
-            중복 검사
-          </button>
           </div>
-          {!isNumericPassword && (
-        <p style={{ color: "red", marginTop: "5px", fontSize: "14px" }}>
-          비밀번호는 숫자만 입력할 수 있습니다.
-        </p>
-      )}
-          {isPasswordDuplicate !== null && (
-            <p style={{ color: isPasswordDuplicate ? 'red' : 'green', marginTop: '10px' }}>
-              {isPasswordDuplicate ? '이미 사용 중인 비밀번호입니다.' : '사용 가능한 비밀번호입니다.'}
-            </p>
-          )}
         </div>
 
         <div className="form-group">
