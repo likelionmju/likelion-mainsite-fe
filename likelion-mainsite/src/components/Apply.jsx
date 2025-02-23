@@ -11,7 +11,7 @@ const Apply = () => {
 
     return (
         <div>
-            <button onClick={handleApply}>13기 지원하러 가기</button>
+            <button className="apply_button" onClick={handleApply}>13기 지원하러 가기</button>
         </div>
     );
 };
