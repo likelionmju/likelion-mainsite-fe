@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import axiosInstance from '@/libs/api/instance';
 
 const AdminPage = () => {
     const navigate = useNavigate();
-    const [id, setId] = useState(""); // 입력한 ID 저장
-    const [formData, setFormData] = useState(null); // 조회된 지원서 데이터 저장
-    const [error, setError] = useState(""); // 에러 메시지 저장
-    const [result, setResult] = useState(""); // 합불 여부 설정
+    const [id, setId] = useState(""); 
+    const [formData, setFormData] = useState(null);
+    const [error, setError] = useState("");
 
     // 로그아웃 핸들러
     const handleLogout = () => {
@@ -24,22 +22,16 @@ const AdminPage = () => {
         }
 
         try {
-            setError(""); // 기존 에러 초기화
+            setError("");
             const response = await axiosInstance.get(`/api/forms/id/${id}`);
 
-            console.log("서버 응답:", response.data); // ✅ 디버깅용 로그 추가
-
-            // 🔹 응답 상태 확인 (백엔드 응답 구조에 따라 수정)
             if (response.status === 200 && response.data.data) {
                 setFormData(response.data.data);
-                console.log(response.data);
             } else {
                 setError("지원서를 불러올 수 없습니다.");
-                console.log(response.data);
             }
         } catch (err) {
             setError("데이터 조회 중 오류가 발생했습니다.");
-            console.error("errrr:", err);
         }
     };
 
@@ -55,44 +47,44 @@ const AdminPage = () => {
             const response = await axiosInstance.put(`/api/forms/update`, null, {
                 params: {
                     studentId: formData.studentId,
-                    result: passStatus, // true: 합격, false: 불합격
+                    result: passStatus,
                 },
             });
 
             if (response.data.status === 200) {
                 alert("합불 상태가 업데이트되었습니다.");
-                setFormData(response.data.data); // 새로운 데이터 반영
+                setFormData(response.data.data);
             } else {
                 setError("합불 상태를 업데이트하지 못했습니다.");
             }
         } catch (err) {
             setError("합불 업데이트 중 오류가 발생했습니다.");
-            console.error(err);
         }
     };
 
     return (
-        <div>
-            <h2>관리자 페이지</h2>
+        <div className="admin-container">
+            <h2 className="admin-title">관리자 페이지</h2>
 
-            {/* 지원서 ID 입력 필드 */}
-            <div>
+            {/* 지원서 ID 입력 */}
+            <div className="input-container">
                 <input
                     type="text"
+                    className="input-field"
                     placeholder="지원서 ID 입력"
                     value={id}
                     onChange={(e) => setId(e.target.value)}
                 />
-                <button onClick={handleFetchForm}>조회</button>
+                <button className="btn btn-primary" onClick={handleFetchForm}>조회</button>
             </div>
 
-            {/* 에러 메시지 출력 */}
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {/* 에러 메시지 */}
+            {error && <p className="error-message">{error}</p>}
 
             {/* 지원서 데이터 출력 */}
             {formData && (
-                <div>
-                    <h3>지원서 정보</h3>
+                <div className="form-container">
+                    <h3 className="form-title">지원서 정보</h3>
                     <p><strong>이름:</strong> {formData.name}</p>
                     <p><strong>학번:</strong> {formData.studentId}</p>
                     <p><strong>학과:</strong> {formData.department}</p>
@@ -111,13 +103,13 @@ const AdminPage = () => {
                     <p><strong>합격 여부:</strong> {formData.passStatus !== null ? (formData.passStatus ? "합격" : "불합격") : "미정"}</p>
 
                     {/* 합불 여부 버튼 */}
-                    <button onClick={() => handleUpdateResult(true)}>합격</button>
-                    <button onClick={() => handleUpdateResult(false)}>불합격</button>
+                    <button className="btn btn-success" onClick={() => handleUpdateResult(true)}>합격</button>
+                    <button className="btn btn-danger" onClick={() => handleUpdateResult(false)}>불합격</button>
                 </div>
             )}
 
             {/* 로그아웃 버튼 */}
-            <button onClick={handleLogout}>로그아웃</button>
+            <button className="btn btn-logout" onClick={handleLogout}>로그아웃</button>
         </div>
     );
 };

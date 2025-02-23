@@ -11,23 +11,24 @@ const AdminLogin = () => {
 
     // 환경변수에서 관리자 계정 정보 가져오기
     const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
-    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD; // 수정
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
 
     // 입력값과 환경변수 비교
     if (email === adminEmail && password === adminPassword) {
-      sessionStorage.setItem("isAuthenticated", "true"); // 최소한의 정보만 저장
-      navigate("/admin"); // 관리자 페이지로 이동
+      sessionStorage.setItem("isAuthenticated", "true"); 
+      navigate("/admin");
     } else {
       alert("이메일 또는 비밀번호가 틀렸습니다.");
     }
   };
 
   return (
-    <div>
-      <h2>관리자 로그인</h2>
+    <div className="login-container">
+      <h2 className="login-title">관리자 로그인</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"
+          className="login-input"
           placeholder="이메일"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -35,12 +36,13 @@ const AdminLogin = () => {
         />
         <input
           type="password"
+          className="login-input"
           placeholder="비밀번호"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">로그인</button>
+        <button type="submit" className="login-button">로그인</button>
       </form>
     </div>
   );
