@@ -1,27 +1,26 @@
 import React, { useState } from "react";
-import axios from "axios";
-import Header from '@/components/Header.jsx';
-import Footer from '@/components/Footer.jsx';
-import Button from '@/components/Button.jsx';
-import './CheckResult.css';
-import axiosInstance from '@/libs/api/instance';
+import axiosInstance from "@/libs/api/instance";
+import Header from "@/components/Header.jsx";
+import Footer from "@/components/Footer.jsx";
+import "./CheckResult.css";
 
 const CheckResult = () => {
-  const [queryNumber, setQueryNumber] = useState(""); // 사용자 입력 쿼리번호
-  const [resultData, setResultData] = useState(null); // 조회된 결과 데이터
-  const [error, setError] = useState(""); // 에러 메시지
+  const [studentId, setStudentId] = useState(""); 
+  const [queryNumber, setQueryNumber] = useState(""); 
+  const [resultData, setResultData] = useState(null); 
+  const [error, setError] = useState(""); 
 
   // 합불 여부 조회 핸들러
   const handleCheckResult = async () => {
-    if (!queryNumber) {
-      setError("쿼리 번호를 입력해주세요.");
+    if (!studentId || !queryNumber) {
+      setError("학번과 비밀번호를 모두 입력해주세요.");
       return;
     }
 
     try {
       setError(""); // 기존 에러 초기화
       const response = await axiosInstance.get(`/api/forms/result`, {
-        params: { queryNumber },
+        params: { studentId, queryNumber },
       });
 
       if (response.data.status === 200) {
@@ -39,12 +38,18 @@ const CheckResult = () => {
     <div className="page-container">
       <Header />
       <div className="result-box-wrapper">
-        <h2 style={{ color: "white", fontSize: "40px", fontWeight: "bold" }} className="result-description">합불 여부 확인</h2>
+        <h2 className="result-description">합불 여부 확인</h2>
 
-        {/* 쿼리번호 입력 필드 */}
+        {/* 학번 및 비밀번호 입력 필드 */}
         <div className="result-input-container">
           <input
             type="text"
+            placeholder="본인의 학번을 입력해주세요"
+            value={studentId}
+            onChange={(e) => setStudentId(e.target.value)}
+          />
+          <input
+            type="password"
             placeholder="설정하셨던 네자리 비밀번호를 입력해주세요"
             value={queryNumber}
             onChange={(e) => setQueryNumber(e.target.value)}
@@ -79,5 +84,3 @@ const CheckResult = () => {
 };
 
 export default CheckResult;
-
-  
