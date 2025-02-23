@@ -12,16 +12,28 @@ const Header = () => {
 		setIsMenuActive(!isMenuActive);
 	};
 
+    const handleHome = () => {
+        navigate('/');
+    };
+
+    const handleRecruit = () => {
+        navigate('/recruit');
+    };
+
+    const handleResult = () => {
+        navigate('/checkresult');
+    };
+
 	return (
 		<header>
             <nav className="navbar">
                 <div className="navbar_logo">
-                    <img className="likelion_logo" src={likelion_logo} alt="멋사 로고" />
+                    <img className="likelion_logo" src={likelion_logo}  onClick={handleHome} alt="멋사 로고" />
                 </div>
                 <ul className={`navbar_menu ${isMenuActive ? 'active' : ''}`}>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Recruit</a></li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="" onClick={handleHome}>Home</a></li>
+                    <li><a href="" onClick={handleRecruit}>Recruit</a></li>
+                    <li><a href="" onClick={handleResult}>Result</a></li>
                 </ul>
                 <a href="#" onClick={toggleMenu} className="navbar_toggleBtn">
                     <img className="hamburger_bars_icon" src={hamburger_bars_icon} alt="햄버거 바 아이콘" />

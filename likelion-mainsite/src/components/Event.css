@@ -1,0 +1,30 @@
+.event {
+    background: #E7F4FF;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid  #2097F6;
+    color:  #2097F6;
+    width: 100%;
+    height: 40px;
+    white-space: nowrap;
+  }
+
+@media (max-width: 768px) {
+    .event {
+      padding: 6px;
+      font-size: 12px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .event {
+      padding: 4px;
+      font-size: 11px;
+    }
+  }

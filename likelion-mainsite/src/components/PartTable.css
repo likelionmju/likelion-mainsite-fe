@@ -1,0 +1,109 @@
+.part-table-container {
+  display: flex;
+  justify-content:space-between;
+}
+
+.part-table {
+  width: 48%;
+  text-align: center;;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+th, td {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #005EB8;
+  padding: 1em 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-items: center;
+}
+
+tr {
+  display: flex;
+  flex: 1;
+}
+
+.part-week {
+  /* color: #005EB8;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5; */
+  color: #3274D9;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.part-session, .part-session2 {
+  /* display: flex;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  align-content: center;
+  justify-content: center;
+  flex: 1; */
+  color: #FFF;
+  font-family: Inter;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.part-session2 {
+  visibility: hidden;
+  overflow: hidden;
+  display: none;
+}
+
+@media (max-width: 768px){
+
+  .part-session {
+    visibility: hidden;
+    overflow: hidden;
+    display: none;
+  }
+  .part-session2 {
+    visibility: visible;
+    overflow: visible;
+    display: table-cell;
+    white-space: normal;
+  }
+
+  .part-week {
+    font-size: 1rem;
+  }
+  
+  .part-session, .part-session2{
+    font-size: 0.9rem;
+  }
+} 
+
+@media (max-width: 480px){
+  .part-week {
+    font-size: 0.6rem;
+  }
+  
+  .part-session, .part-session2{
+    font-size: 0.4rem;
+  }
+}

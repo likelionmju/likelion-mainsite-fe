@@ -1,0 +1,41 @@
+.introduction-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.introduction-title {
+    color: #3274D9;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.introduction-subtitle {
+    color: white;
+    line-height : 1.7em;
+    margin-bottom: 2%;
+}
+
+.introduction-box-list-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 768px){
+    .introduction-title {
+        font-size: 1.2rem;
+    }
+    .introduction-subtitle {
+        font-size: 1rem;
+    }
+} 
+
+@media (max-width: 480px){
+    .introduction-title {
+        font-size: 0.8rem;
+    }
+    .introduction-subtitle {
+        font-size: 0.5rem;
+    }
+}
