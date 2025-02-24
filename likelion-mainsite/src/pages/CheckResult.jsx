@@ -29,7 +29,7 @@ const CheckResult = () => {
         setError("합불 여부를 확인할 수 없습니다.");
       }
     } catch (err) {
-      setError("조회 중 오류가 발생했습니다.");
+      setError("제출되지 않은 데이터입니다.");
       console.error(err);
     }
   };
