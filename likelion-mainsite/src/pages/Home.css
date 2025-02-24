@@ -143,12 +143,12 @@ Footer {
     top: 35%;
 }
 
-.recruit_date_div {
+/* .recruit_date_div {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     margin-top: 25rem;
-}
+} */
 
 /* @media (max-width: 820px) { */
     /* .banner{
