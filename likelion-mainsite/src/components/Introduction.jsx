@@ -5,19 +5,19 @@ import IntroductionBox from './IntroductionBox';
 const Introduction = () => {
     const introductionList = {
         techit : {
-            img: '/public/techit.svg',
+            img: '/techit.svg',
             content: 'Techit 강의 <br/> 무제한 무료 제공'
         },
         networking : {
-            img: '/public/networking.svg',
+            img: '/networking.svg',
             content: '타학교 및 현직자와의 <br/> 네트워킹 기회'
         },
         activity : {
-            img: '/public/activity.svg',
+            img: '/activity.svg',
             content: '전국 최대 규모의 <br/> 아이디어톤과 해커톤'
         },
         everyone : {
-            img: '/public/everyone.svg',
+            img: '/everyone.svg',
             content: '비전공자도 쉽게 <br/> 시작할 수 있는 동아리'
         }
     }
