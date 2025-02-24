@@ -22,6 +22,12 @@ body {
     margin-bottom: 200px;
     flex:1;
   }
+
+  .result-description {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+  }
   
   .result-input-container {
     display: flex;

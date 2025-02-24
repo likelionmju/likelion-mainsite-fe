@@ -15,6 +15,10 @@ const Banner = ({character}) => {
                             <img className="character" src={character} />
                             <div className='character-background'></div>
                         </div>
+
+
+                        {/* <p className="banner_title">LIKELION MJU</p> */}
+
                     </div>
                     <p className="banner_title">LIKELION MJU</p>
                 </div>

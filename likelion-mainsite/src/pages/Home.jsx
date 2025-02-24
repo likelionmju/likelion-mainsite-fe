@@ -7,7 +7,7 @@ import YearPlan from '@/components/YearPlan';
 import character from '../assets/character4.svg'
 import Apply from '@/components/Apply';
 import Card from '@/components/Card';
-import fire_icon from '../assets/fire_icon.svg';
+import fire_icon from '@/assets/fire_icon.svg';
 import chat_icon from '../assets/chat_icon.svg';
 import crown_icon from '../assets/crown_icon.svg';
 import Part from '@/components/Part';
@@ -16,11 +16,15 @@ import gift_icon from "../assets/gift_icon.svg";
 import noti_icon from "../assets/noti_icon.svg";
 import monitor_icon from "../assets/monitor_icon.svg";
 import heart_icon from "../assets/heart_icon.svg";
-import recruit_date_line from "../assets/date_line.svg";
+// import recruit_date_line from "../assets/date_line.svg";
 // import RecruitDate from '@/components/RecruitDate';
-import Banner from '@/components/Banner';
-import Introduction from '@/components/Introduction';
+// import Banner from '@/components/Banner';
+// import Introduction from '@/components/Introduction';
 import Schedule from '@/components/Schedule';
+import recruit_date_line from "../assets/recruit_date_line.svg";
+import RecruitDate from '@/components/RecruitDate';
+import Banner from '@/components/Banner.jsx';
+import Introduction from '@/components/Introduction';
 
 const Home = () => {
 	return (
@@ -29,6 +33,7 @@ const Home = () => {
 			{/* 배너 */}
 			<Banner character={character} />
 			<Introduction/>
+			{/* <Introduction/> */}
 			{/* <Introduction/> */}
 			{/* <div className="banner">
 				<div className="banner_title_container">
@@ -155,7 +160,7 @@ const Home = () => {
 				</div>
 			</div> */}
 
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };

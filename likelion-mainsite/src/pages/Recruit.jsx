@@ -11,14 +11,15 @@ import { strictEmailRegex, numberRegex, studentNumberRegex, phoneNumberRegex } f
 
 const RecruitPage = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   // 중복 검사 상태
   const [isDuplicate, setIsDuplicate] = useState(null);
-  const [isPasswordDuplicate, setIsPasswordDuplicate] = useState(null);
+  // const [isPasswordDuplicate, setIsPasswordDuplicate] = useState(null);
 
   // 중복 검사 완료 여부 상태
   const [isDuplicateChecked, setIsDuplicateChecked] = useState(false);
-  const [isPasswordChecked, setIsPasswordChecked] = useState(false);
+  // const [isPasswordChecked, setIsPasswordChecked] = useState(false);
 
   // 개별적인 유효성 검사 상태
   const [isValidEmail, setIsValidEmail] = useState(true);
@@ -46,8 +47,28 @@ const RecruitPage = () => {
 
   // 모든 필드가 유효한지 체크하는 함수
   const isFormValid = () => {
+    console.log(name);
+    console.log(studentNumber);
+    console.log(department);
+    console.log(phoneNumber);
+    console.log(emailAddress);
+    console.log(militaryService);
+    console.log(studentStatus);
+    console.log(applicationPart);
+    console.log(firstQuestion);
+    console.log(secondQuestion);
+    console.log(thirdQuestion);
+    console.log(fouthQuestion);
+    console.log(fifthQuestion);
+    console.log(agreement);
+    console.log(passWord.length);
+    console.log(isValidEmail);
+    console.log(isValidStudentNumber);
+    console.log(isValidPhoneNumber);
+    console.log(isNumericPassword);
+    console.log(isDuplicateChecked);
     if (
-      !name ||
+      !name || 
       !studentNumber ||
       !department ||
       !phoneNumber ||
@@ -66,8 +87,8 @@ const RecruitPage = () => {
       !isValidStudentNumber ||
       !isValidPhoneNumber ||
       !isNumericPassword ||
-      !isDuplicateChecked ||
-      !isPasswordChecked  
+      !isDuplicateChecked
+      // !isPasswordChecked  
     ) {
       return false;
     }
@@ -121,35 +142,52 @@ const RecruitPage = () => {
     }
   };
 
-   const checkPasswordDuplicate = async () => {
-    if (!passWord || passWord.length !== 4) {
-      alert('4자리 숫자로 된 비밀번호를 입력해주세요.');
-      return;
-    }
+  //  const checkPasswordDuplicate = async () => {
+    // if (!passWord || passWord.length !== 4) {
+    //   alert('4자리 숫자로 된 비밀번호를 입력해주세요.');
+    //   return;
+    // }
 
-    try {
-      const response = await axiosInstance.get(`/api/forms/checkpw?queryNumber=${passWord}`);
+  //   try {
+  //     const response = await axiosInstance.get(`/api/forms/checkpw?queryNumber=${passWord}`);
 
-      if (response.status === 200) {
-        setIsPasswordDuplicate(response.data.data); 
-        setIsPasswordChecked(true);
-      } else {
-        console.error('서버 응답 오류:', response);
-      }
-    } catch (error) {
-      console.error('비밀번호 중복 검사 요청 실패:', error);
-      alert('비밀번호 중복 검사 중 오류가 발생했습니다.');
-    }
-  };
+  //     if (response.status === 200) {
+  //       setIsPasswordDuplicate(response.data.data);
+  //       setIsPasswordChecked(true);
+  //     } else {
+  //       console.error('서버 응답 오류:', response);
+  //     }
+  //   } catch (error) {
+  //     console.error('비밀번호 중복 검사 요청 실패:', error);
+  //     alert('비밀번호 중복 검사 중 오류가 발생했습니다.');
+  //   }
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); 
-    
+  const handleOpenModal = (e) => {
+    e.preventDefault(); // 기본 제출 동작 방지
+
     if (!isFormValid()) {
       alert("모든 필수 항목을 올바른 형식으로 작성해 주세요.");
       return;
     }
+    setIsOpen(true); // 모달 열기
+  };
     
+    // try {
+    //   const response = await axiosInstance.post('/api/forms/submit', userData);
+    //   console.log('지원 폼 제출 성공:', response.data);
+    //   navigate('/');
+    // } catch (error) {
+    //   console.error('지원 폼 제출 실패:', error);
+    //   if (error.response) {
+    //     console.log("서버 응답 데이터:", error.response.data);
+    //     alert(`지원서 제출 실패: ${error.response.data.message || "알 수 없는 오류"}`);
+    //   } else {
+    //     alert('지원서 제출에 실패했습니다. 다시 시도해 주세요.');
+    //   }
+    // }
+    // 최종 제출 함수
+  const submitForm = async () => {
     const userData = {
       name: name,
       studentId: studentNumber,
@@ -168,28 +206,47 @@ const RecruitPage = () => {
       queryNumber: passWord,
       question: inquiry,
     };
-  
+
+
     try {
-      const response = await axiosInstance.post('/api/forms/submit', userData);
-      console.log('지원 폼 제출 성공:', response.data);
-      navigate('/');
+      const response = await axiosInstance.post("/api/forms/submit", userData);
+      console.log("지원 폼 제출 성공:", response.data);
+      setIsOpen(false); 
+      navigate("/"); 
     } catch (error) {
-      console.error('지원 폼 제출 실패:', error);
-      alert('지원 폼 제출에 실패했습니다. 다시 시도해 주세요.');
+      console.error("지원 폼 제출 실패:", error);
+
+      if (error.response) {
+        console.log("서버 응답 데이터:", error.response.data);
+        alert(`지원서 제출 실패: ${error.response.data.message || "알 수 없는 오류"}`);
+      } else {
+        alert("지원서 제출에 실패했습니다. 다시 시도해 주세요.");
+      }
     }
   };
+
+    // try {
+    //   const response = await axiosInstance.post('/api/forms/submit', JSON.stringify(userData), { headers: { "Content-Type": "application/json" } });
+    //   console.log('지원 폼 제출 성공:', response.data);
+    //   navigate('/');
+    // } catch (error) {
+    //   console.error('지원 폼 제출 실패:', error);
+    //   alert('지원 폼 제출에 실패했습니다. 다시 시도해 주세요.');
+    // }
+  
+
   
 
   return (
     <div className="application">
       <Header />
       <div className="form-wrapper">
-        <h2>
+        <h2 className="form-description-wrapper">
           <strong className="form-description">
             멋쟁이사자처럼 13기 아기사자 지원서
           </strong>
           <br />
-          <small>(2025.02.24 ~ 2025.03.07)</small>
+          <small>(2025.02.26 ~ 2025.03.09)</small>
           <br />
           <small className="form-guide">
             <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>{' '}
@@ -204,7 +261,8 @@ const RecruitPage = () => {
               htmlFor="name"
               style={{ color: 'white', marginBottom: '20px' }}
             >
-              이름{' '}
+     
+               이름{' '}
               <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>
             </label>
             <input
@@ -237,7 +295,7 @@ const RecruitPage = () => {
               type="button"
               className="btn btn-primary"
               onClick={checkDuplicate} 
-              style={{ marginTop: '10px' }}
+              style={{ marginBottom: '7px' }}
             >
               중복 검사
             </button>
@@ -254,7 +312,7 @@ const RecruitPage = () => {
               </p>
             )}
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: '60px' }}>
             <label htmlFor="username" style={{ color: 'white' }}>
               학과{' '}
               <span style={{ marginLeft: '2px', color: '#3383FE' }}>*</span>
@@ -335,9 +393,9 @@ const RecruitPage = () => {
               <option value="선택해주세요" disabled>
                 선택해주세요
               </option>
-              <option value="미필">미필</option>
-              <option value="군필">군필</option>
-              <option value="해당 없음">해당 없음</option>
+              <option value="미필">미필자</option>
+              <option value="군필">군필자</option>
+            <option value="해당없음">해당없음</option>
             </select>
           </div>
           <div className="form-group">
@@ -560,24 +618,12 @@ const RecruitPage = () => {
             required
             onChange={handlePasswordChange}
           />
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={checkPasswordDuplicate}
-          >
-            중복 검사
-          </button>
           </div>
           {!isNumericPassword && (
         <p style={{ color: "red", marginTop: "5px", fontSize: "14px" }}>
           비밀번호는 숫자만 입력할 수 있습니다.
         </p>
       )}
-          {isPasswordDuplicate !== null && (
-            <p style={{ color: isPasswordDuplicate ? 'red' : 'green', marginTop: '10px' }}>
-              {isPasswordDuplicate ? '이미 사용 중인 비밀번호입니다.' : '사용 가능한 비밀번호입니다.'}
-            </p>
-          )}
         </div>
 
         <div className="form-group">
@@ -592,15 +638,44 @@ const RecruitPage = () => {
           />
         </div>
         <div className="form-group">
-          <Button type="submit" disabled={!isFormValid()} onClick={handleSubmit}>
-            지원서 제출
-          </Button>
+        <Button onClick={handleOpenModal} type="submit" disabled={!isFormValid()}>
+        제출하기
+      </Button>
+
+      {isOpen && (
+        <div
+          className="modal-overlay"
+          onClick={() => setIsOpen(false)}
+        >
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="modal-body">
+              <div className="modal-title">
+                한 번 제출하면 지원서 수정이 불가합니다 ⚠️
+              </div>
+              <div className="modal-message">
+                정말 제출하시겠습니까?
+              </div>
+            </div>
+            <div className="modal-actions">
+              <button className="cancel-btn" onClick={() => setIsOpen(false)}>
+                취소
+              </button>
+              <button className="submit-btn" onClick={submitForm}>
+                네 제출하겠습니다
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
         </div>
       </div>
-
       <Footer />
     </div>
 );
 }
+
 
 export default RecruitPage;
