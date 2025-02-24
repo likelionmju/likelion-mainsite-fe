@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15% auto;
+    margin: 20% 0 10%;
 }
 
 .apply-btn {
@@ -81,6 +81,10 @@
 } */
 
 @media (max-width: 768px) {
+    .apply-container {
+        margin-top: 75%;
+    }
+    
     .apply-btn {
         width: 23rem;
         height: 3.5rem;

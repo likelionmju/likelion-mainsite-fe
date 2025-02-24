@@ -14,19 +14,21 @@
     font-size: 2rem;
     font-weight: bold;
     width: 90%;
-    margin: 3% auto;
+    margin-bottom: 3%;
 }
 
 .part-container {
     /* background-color: #051C47; */
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     flex-direction: column;
     display: flex;
+    font-family: Pretendard;
 }
 
 .part-box-container {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    /* margin: 0 auto; */
 }
 
 /* .part-box {
@@ -71,25 +73,78 @@
     color:white !important;
 }       
 
+/*  */
+.part-subtitle-btn{
+    color: white;
+}
+
+.part-btn-box {
+    display: flex;
+    gap: 2em;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* padding: 0 20%; */
+}
+
+.part-subtitle-btn {
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    color: #051C47;
+    border-radius: 1.5em;
+    cursor: pointer;
+    /* font-size: 14px; */
+    /* border: 2px solid white; */
+    cursor: pointer;
+    margin-bottom: 3%;
+}
+
+.active-part {
+    background-color: #3274D9;
+    /* background-color: #3274D9; */
+    /* border: 2px solid #005EB8; */
+    color: white;
+    /* color: #005EB8; */
+}
+
 @media (max-width: 768px){
-    .part-title {
-        font-size: 1.2rem;
+    .part-btn-box {
+        /* display: flex; */
+        /* gap: 2em; */
+        justify-content: center;
     }
 
-    .part-box-container {
-        margin: 0 5%;
+    table {
+        width: 100%;
+    }
+
+    .part-title {
+        font-size: 1.4rem;
+        margin-bottom: 5%;
     }
     
     .part-subtitle{
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .part-subtitle-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 3rem;
+        margin-bottom: 5%;
     }
 } 
 
 @media (max-width: 480px){
     .part-title {
-        font-size: 0.8rem;
+        font-size: 1.1rem; 
+        margin-bottom: 7%;
     }
     .part-subtitle{
         font-size: 0.6rem;
     }
+    .part-subtitle-btn {
+        font-size: 0.7rem;
+        padding: 0.4rem 1.5rem;
+    }
 }
+

@@ -3,11 +3,14 @@
     width: 100%;
     /* background-image: url('../assets/banner3.svg'); */
     /* min-height: 100vh; */
+    min-height: 100vh;
     min-width: 99vw;
+    width: 100vw;
     /* position: relative; */
     /*  */
     /* background-size: 100% auto; */
     /* background-repeat: no-repeat; */
+    overflow: hidden;
 }
 
 .banner_title_container {

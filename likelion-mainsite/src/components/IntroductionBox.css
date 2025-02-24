@@ -4,7 +4,7 @@
 }
 
 .introduction-box-img {
-    width: 55%;
+    width: 45%;
     height: auto;
 }
 
@@ -25,16 +25,17 @@
 }
 
 @media (max-width: 768px){
-    .introduction-box-content {
-        font-size: 0.8rem;
-   }
-    .introduction-box-img {
-        width: 75%;
+    .introduction-box-container {
+        margin-bottom: 5%;
     }
+
+    .introduction-box-content {
+        font-size: 1rem;
+   }
 } 
 
 @media (max-width: 480px){
    .introduction-box-content {
-        font-size: 0.4rem;
+        font-size: 0.7rem;
    }
 }
