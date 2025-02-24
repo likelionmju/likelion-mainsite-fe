@@ -21,7 +21,7 @@ const Part = () => {
                 <PartTable part={part} setPart={setPart}/>
             </div>
 
-            {part === 'web' && (
+            {/* {part === 'web' && (
                 <PartExp
                     content={`웹(프론트엔드)에선
                         사용자가 인터넷을 통해 정보를 보고, 입력하고, 요청하는 역할을 합니다.
@@ -38,7 +38,7 @@ const Part = () => {
                         처리한 데이터를 웹에 보내줍니다.`
                     }
                 />
-            )}
+            )} */}
         </div>
     );
 };

@@ -10,8 +10,8 @@ const Apply = () => {
     };
 
     return (
-        <div>
-            <button onClick={handleApply}>13기 지원하러 가기</button>
+        <div className='apply-container'>
+            <button className="apply-btn" onClick={handleApply}>13기 지원하러 가기</button>
         </div>
     );
 };

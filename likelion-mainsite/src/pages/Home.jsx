@@ -3,7 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './Home.css';
 import YearPlan from '@/components/YearPlan';
-import character from '../assets/character.svg'
+// import character from '../assets/character.svg'
+import character from '../assets/character4.svg'
 import Apply from '@/components/Apply';
 import Card from '@/components/Card';
 import fire_icon from '../assets/fire_icon.svg';
@@ -17,21 +18,26 @@ import monitor_icon from "../assets/monitor_icon.svg";
 import heart_icon from "../assets/heart_icon.svg";
 import recruit_date_line from "../assets/recruit_date_line.svg";
 import RecruitDate from '@/components/RecruitDate';
+import Banner from '@/components/Banner';
+import Introduction from '@/components/Introduction';
 
 const Home = () => {
 	return (
 		<div className="Home">
-			<Header />
+			{/* <Header /> */}
 			{/* 배너 */}
-			<div className="banner">
+			<Banner character={character} />
+			<Introduction/>
+			{/* <Introduction/> */}
+			{/* <div className="banner">
 				<div className="banner_title_container">
 					<img className="character" src={character} />
 					<p className="banner_title">LIKELION MJU</p>
-				</div>
-				{/* <img className="character" src={character} />
-				<p className="banner_title">LIKELION MJU</p> */}
-				<Apply />
-			</div>
+				</div> */}
+				{/* {/* <img className="character" src={character} /> */}
+				{/* <p className="banner_title">LIKELION MJU</p> */}
+				{/* <Apply /> */}
+			{/* </div> */}
 
 			{/* 멋사 소개 */}
 			{/* <div className="why">
@@ -62,10 +68,10 @@ const Home = () => {
 			</div> */}
 			
 			{/* 파트별 소개 */}
-			{/* <Part/> */}
+			<Part/>
 
 			{/* 연간 일정 */}
-			{/* <YearPlan /> */}
+			<YearPlan />
 
 			{/* 인재상 */}
 			{/* <div className="right_people">
