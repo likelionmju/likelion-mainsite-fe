@@ -29,7 +29,7 @@ const CheckResult = () => {
         setError("합불 여부를 확인할 수 없습니다.");
       }
     } catch (err) {
-      setError("조회 중 오류가 발생했습니다.");
+      setError("제출되지 않은 데이터입니다.");
       console.error(err);
     }
   };
@@ -38,7 +38,7 @@ const CheckResult = () => {
     <div className="page-container">
       <Header />
       <div className="result-box-wrapper">
-        <h2 className="result-description">합불 여부 확인</h2>
+        <h2 className="result-description">서류 전형 결과 확인</h2>
 
         {/* 학번 및 비밀번호 입력 필드 */}
         <div className="result-input-container">
@@ -68,12 +68,12 @@ const CheckResult = () => {
             <h3>결과 확인</h3>
             <p><strong>이름:</strong> {resultData.name}</p>
             <p>
-              <strong>합격 여부:</strong> 
+              <strong>합격 여부 : </strong> 
               {resultData.passStatus === null 
-                ? "미정" 
+                ? " ⚠️ 서류 합격 여부는 3.10 이후부터 확인 가능합니다" 
                 : resultData.passStatus 
-                  ? "✅ 합격" 
-                  : "❌ 불합격"}
+                  ? " ✅ 합격" 
+                  : " ❌ 불합격"}
             </p>
           </div>
         )}
