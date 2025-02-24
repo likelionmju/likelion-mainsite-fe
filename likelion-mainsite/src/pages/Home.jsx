@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import './Home.css';
 import YearPlan from '@/components/YearPlan';
 // import character from '../assets/character.svg'
-import character from '../assets/character4.svg'
+import character from '/public/character4.svg'
 import Apply from '@/components/Apply';
 import Card from '@/components/Card';
 import fire_icon from '@/assets/fire_icon.svg';
