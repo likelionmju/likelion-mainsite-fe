@@ -22,12 +22,14 @@ function YearPlan() {
 
     <div className="yearly-plan">
         <div className="title-text">
-            <h2>연간 일정</h2>
+            <h3>연간 일정</h3>
         </div>
-        <div className="semester">
-        {scheduleData.map((semester, index) => (
-            <Semester key={index} number={semester.number} title={semester.title} events={semester.events} />
-        ))}
+        <div className="semester-wrapper">
+          <div className="semester">
+          {scheduleData.map((semester, index) => (
+              <Semester key={index} number={semester.number} title={semester.title} events={semester.events} />
+          ))}
+          </div>
         </div>
     </div>
   );

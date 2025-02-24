@@ -6,8 +6,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #071D49;
-    padding: 10px 30px;
+    /* background-color: #071D49; */
+    background-color: transparent;
+    padding: 10px 80px;
     position: relative;
 }
 
