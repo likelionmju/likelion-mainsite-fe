@@ -16,6 +16,11 @@ import gift_icon from "../assets/gift_icon.svg";
 import noti_icon from "../assets/noti_icon.svg";
 import monitor_icon from "../assets/monitor_icon.svg";
 import heart_icon from "../assets/heart_icon.svg";
+// import recruit_date_line from "../assets/date_line.svg";
+// import RecruitDate from '@/components/RecruitDate';
+// import Banner from '@/components/Banner';
+// import Introduction from '@/components/Introduction';
+import Schedule from '@/components/Schedule';
 import recruit_date_line from "../assets/recruit_date_line.svg";
 import RecruitDate from '@/components/RecruitDate';
 import Banner from '@/components/Banner.jsx';
@@ -27,6 +32,7 @@ const Home = () => {
 			{/* <Header /> */}
 			{/* 배너 */}
 			<Banner character={character} />
+			<Introduction/>
 			{/* <Introduction/> */}
 			{/* <Introduction/> */}
 			{/* <div className="banner">
@@ -68,10 +74,11 @@ const Home = () => {
 			</div> */}
 			
 			{/* 파트별 소개 */}
-			{/* <Part/> */}
+			<Part/>
 
 			{/* 연간 일정 */}
-			{/* <YearPlan /> */}
+			<YearPlan />
+			<Schedule/>
 
 			{/* 인재상 */}
 			{/* <div className="right_people">
@@ -125,25 +132,31 @@ const Home = () => {
 			{/* 모집 일정 */}
 			{/* <div className="recruit_date">
 				<p className="recruit_date_title">모집 일정</p>
-				<img className="recruit_date_line"  src={recruit_date_line} />
 				<div className="recruit_date_div">
-					<RecruitDate
-						content_bold="서류 모집"
-						content_medium="2/24 ~ 3/9"
-					/>
-					<RecruitDate
-						content_bold="서류 발표"
-						content_medium="3/10"
-						content_light="(17:00 이내)"
-					/>
-					<RecruitDate
-						content_bold="면접"
-						content_medium="3/12 ~ 3/14"
-					/>
-					<RecruitDate
-						content_bold="합격자 발표"
-						content_medium="3/15"
-					/>
+						<div>
+							<p className="recruit_date_content_bold">02/26-03/09</p>
+							<div className="recruit_date_box">
+								<span className="recruit_date_content_medium">서류 전형</span>
+							</div>
+						</div>
+						<div>
+							<p className="recruit_date_content_bold">03/10</p>
+							<div className="recruit_date_box">
+								<span className="recruit_date_content_medium">서류 합격 발표</span>
+							</div>
+						</div>
+						<div>
+							<p className="recruit_date_content_bold">03/12-03/14</p>
+							<div className="recruit_date_box">
+								<span className="recruit_date_content_medium">면접 전형</span>
+							</div>
+						</div>
+						<div>
+							<p className="recruit_date_content_bold">03/15</p>
+							<div className="recruit_date_box">
+								<span className="recruit_date_content_medium">최종 합격 발표</span>
+							</div>
+						</div>
 				</div>
 			</div> */}
 

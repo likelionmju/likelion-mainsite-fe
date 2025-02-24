@@ -1,0 +1,123 @@
+.recruit_date {
+    width: 100%;
+    max-width: 1300px;
+    margin: 100px auto;
+    padding: 30px; 
+    text-align: left;
+    position: relative;
+}
+
+
+.recruit_date_title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 100px;
+    color: #3274D9;
+    margin-left: 100px;
+}
+
+.recruit_date_div {
+    display: flex;
+    flex-direction: row; 
+    /* justify-content: space-between;  */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 150px;
+}
+
+.recruit_date_content_bold {
+    font-size: 1.1rem; 
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px; 
+}
+
+
+.recruit_date_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; 
+    width: 140px; 
+    border-top: 5px solid #3274D9;
+}
+
+
+.recruit_date_content_medium {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+
+.recruit_date_box:first-child {
+    border-top: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .recruit_date {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .recruit_date_div {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .recruit_date_box {
+        width: 42%; 
+        padding: 8px; 
+        border-top: 2px solid #3274D9;
+    }
+
+    .recruit_date_content_bold {
+        font-size: 1rem; 
+    }
+
+    .recruit_date_content_medium {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recruit_date {
+        max-width: 85%;
+        padding: 10px;
+    }
+
+    .recruit_date_div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        justify-items: center;
+    }
+
+    .recruit_date_box {
+        width: 100%; 
+        max-width: 140px; 
+        border-left: 5px solid #3274D9;
+        border-top: none;
+        text-align: left;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+    .recruit_date_content_bold,
+    .recruit_date_content_medium {
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .recruit_date_title {
+        font-size: 1.1rem; 
+        margin-bottom: 30px; 
+        margin-left: 10px;
+    }
+}
+
