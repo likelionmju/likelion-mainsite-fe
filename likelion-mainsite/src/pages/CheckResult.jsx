@@ -62,7 +62,7 @@ const CheckResult = () => {
         </div>
 
         {/* 에러 메시지 출력 */}
-        {error && <p className="error-message">{error}</p>}
+        {/* {error && <p className="error-message">{error}</p>} */}
 
         {/* 조회 결과 출력 */}
         {/* {resultData && (
