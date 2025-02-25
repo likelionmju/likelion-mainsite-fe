@@ -9,6 +9,7 @@ const CheckResult = () => {
   const [queryNumber, setQueryNumber] = useState(""); 
   const [resultData, setResultData] = useState(null); 
   const [error, setError] = useState(""); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 합불 여부 조회 핸들러
   const handleCheckResult = async () => {
@@ -32,6 +33,7 @@ const CheckResult = () => {
       setError("제출되지 않은 데이터입니다.");
       console.error(err);
     }
+    setIsModalOpen(true);
   };
 
   return (
@@ -63,7 +65,7 @@ const CheckResult = () => {
         {error && <p className="error-message">{error}</p>}
 
         {/* 조회 결과 출력 */}
-        {resultData && (
+        {/* {resultData && (
           <div className="result-container">
             <h3>결과 확인</h3>
             <p><strong>이름:</strong> {resultData.name}</p>
@@ -75,6 +77,26 @@ const CheckResult = () => {
                   ? " ✅ 합격" 
                   : " ❌ 불합격"}
             </p>
+          </div>
+        )} */}
+                {/* 조회 기간이 아닌 경우 모달 */}
+                {isModalOpen && (
+          <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-body">
+                <div className="modal-title">조회 불가 기간 ⚠️</div>
+                <div className="modal-message">
+                3월 10일 이후부터 조회 가능합니다
+                  {/* <p>⚠️ 서류 합격 결과는</p>
+                  <p>3월 10일 이후부터 조회 가능합니다</p> */}
+                </div>
+              </div>
+              <div className="modal-actions">
+                <button className="submit-btn" onClick={() => setIsModalOpen(false)}>
+                  확인
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
