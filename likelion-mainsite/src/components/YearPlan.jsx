@@ -19,8 +19,7 @@ function YearPlan() {
   ];
 
   return (
-
-    <div className="yearly-plan">
+        <div className="yearly-plan">
         <div className="title-text">연간 일정</div>
         <div className="semester-wrapper">
           <div className="semester">
