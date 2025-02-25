@@ -21,7 +21,7 @@ html, body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     animation: fade-in 1.5s ease-in-out;
 }
 
@@ -32,7 +32,7 @@ html, body {
     font-weight: bold;
     line-height: 110%;
     /* margin-top: 15rem; */
-    margin-top: 10%;
+    margin-top: 7%;
     padding: 0;
     text-align: center;
     /* position: relative; */

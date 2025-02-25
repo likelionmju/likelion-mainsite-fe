@@ -6,12 +6,22 @@
 .introduction-box-img {
     width: 45%;
     height: auto;
-}
-
+  }
+   
 .introduction-box-content {
     color: white;
-    line-height : 2em;
-}
+    line-height: 2em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease; /* 부드럽게 확대되도록 트랜지션 적용 */
+  }
+  
+  .introduction-box-content:hover {
+    transform: scale(1.1); /* hover 시 텍스트가 확대됨 */
+  }
+  
 
 .introduction-box-img-container {
     display: flex;

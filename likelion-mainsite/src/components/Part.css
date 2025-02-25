@@ -86,18 +86,33 @@
     /* padding: 0 20%; */
 }
 
+/* 버튼 기본 스타일 */
 .part-subtitle-btn {
     font-weight: 500;
     padding: 0.5rem 1.5rem;
-    background-color: white;
-    color: #051C47;
+    /* background-color: #ccc; */
+    color: white;
     border-radius: 1.5em;
     cursor: pointer;
-    /* font-size: 14px; */
-    /* border: 2px solid white; */
-    cursor: pointer;
     margin-bottom: 3%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* 모든 애니메이션을 부드럽게 적용 */
 }
+
+/* hover 시 버튼의 애니메이션 효과 */
+.part-subtitle-btn:hover {
+    transform: scale(1.1); /* 버튼 크기를 10% 확대 */
+    background-color: #3274D9; /* 배경색을 파란색으로 변경 */
+    color: white; /* 텍스트 색상을 하얀색으로 변경 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+/* 클릭 시 색상이 변하는 효과 */
+.part-subtitle-btn:active {
+    transform: scale(0.98); /* 클릭 시 버튼이 약간 축소 */
+    background-color: #005EB8; /* 클릭 시 배경색이 다소 어두운 파랑으로 변경 */
+    color: white; /* 텍스트 색상 변경 */
+}
+
 
 
 .active-part {
