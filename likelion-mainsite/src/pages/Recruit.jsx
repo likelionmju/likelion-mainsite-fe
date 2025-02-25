@@ -595,7 +595,7 @@ const RecruitPage = () => {
                     id="agree1"
                     required
                     style={{ height: '20px', width: '20px', margin: 'initial' }}
-					onChange={(e) => setAgreement(true)}
+					onChange={(e) => setAgreement(e.target.checked)}
                   />
               </div>
             </div>
