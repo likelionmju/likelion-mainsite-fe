@@ -135,8 +135,9 @@ textarea {
 
 footer {
     margin-top: auto;
-    position: relative;
+    /* position: relative; */
     color: white;
+    z-index: -1;
 }
 
 .modal-overlay {
@@ -149,6 +150,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
   }
   
   .modal-content {
