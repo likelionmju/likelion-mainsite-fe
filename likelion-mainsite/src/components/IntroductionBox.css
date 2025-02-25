@@ -18,9 +18,9 @@
     transition: transform 0.3s ease; /* 부드럽게 확대되도록 트랜지션 적용 */
   }
   
-  .introduction-box-content:hover {
-    transform: scale(1.1); /* hover 시 텍스트가 확대됨 */
-  }
+  /* .introduction-box-content:hover {
+    transform: scale(1.1);
+  } */
   
 
 .introduction-box-img-container {

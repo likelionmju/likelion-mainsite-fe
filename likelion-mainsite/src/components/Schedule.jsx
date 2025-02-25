@@ -9,7 +9,7 @@ const Schedule = () => {
                 <div>
                     <p className="recruit_date_content_bold">02/26 - 03/09</p>
                     <div className="recruit_date_box">
-                        서류전형
+                        서류 전형
                     </div>
                 </div>
                 <div>

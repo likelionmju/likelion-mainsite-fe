@@ -94,17 +94,17 @@
     }
   }
   
-  @keyframes pulse {
+  /* @keyframes pulse {
     0% {
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1); /* 살짝 확대 */
+      transform: scale(1.1); 
     }
     100% {
-      transform: scale(1); /* 원래 크기로 */
+      transform: scale(1); 
     }
-  }
+  } */
   
   .semester-block {
     display: flex;
@@ -118,7 +118,7 @@
     transition: transform 0.2s ease-in-out;
   }
   
-  .semester-block:hover {
-    animation: pulse 0.5s ease-in-out; /* Pulse 효과 */
+  /* .semester-block:hover {
+    animation: pulse 0.5s ease-in-out; 
   }
-  
+   */
