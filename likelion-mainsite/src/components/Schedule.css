@@ -1,8 +1,9 @@
 .recruit_date {
-    width: 100%;
-    max-width: 1300px;
-    margin: 100px auto;
-    padding: 30px; 
+    width: 80%;
+    /* max-width: 1300px; */
+    /* margin: 100px auto; */
+    margin: 0 auto;
+    /* padding: 30px;  */
     text-align: left;
     position: relative;
 }
@@ -11,9 +12,10 @@
 .recruit_date_title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
+    margin-bottom: 3%;
     color: #3274D9;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 
 .recruit_date_div {
@@ -22,11 +24,15 @@
     /* justify-content: space-between;  */
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     gap: 150px;
 }
 
 .recruit_date_content_bold {
+    display: flex;
+    /* justify-content: center; */
+    width: 100%;
     font-size: 1.1rem; 
     font-weight: bold;
     color: white;
@@ -37,11 +43,15 @@
 
 .recruit_date_box {
     display: flex;
-    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
-    padding: 20px 0; 
-    width: 140px; 
-    border-top: 5px solid #3274D9;
+    /* padding: 20px 0; */
+    padding-left: 40px;
+    /* width: 140px;  */
+    border-left: 7px solid #3274D9;
+    color: white;
+    white-space: nowrap;
+    font-size: 1.1rem;
 }
 
 
@@ -49,6 +59,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: white;
+    white-space: nowrap;
 }
 
 
@@ -56,90 +67,30 @@
     border-top: none;
 }
 
-
-@media (max-width: 768px) {
-
-    .recruit_date {
-        max-width: 90%;
-        padding: 10px;
-    }
-
-    .recruit_date_div {
-        flex-wrap: nowrap; /* 항목들이 한 줄로 나열되도록 설정 */
-        justify-content: space-between; /* 각 항목 사이의 간격을 적절하게 조정 */
-        gap: 10px; /* 간격을 더 좁게 설정 */
-    }
-
-    .recruit_date_box {
-        width: 22%; /* 한 줄에 4개가 나올 수 있도록 너비 설정 */
-        padding: 8px;
-        border-top: 2px solid #3274D9;
-    }
-
-    .recruit_date_content_bold {
-        font-size: 1rem; 
-    }
-
-    .recruit_date_content_medium {
-        font-size: 0.9rem;
-    }
-}
-
-
-
-@media (max-width: 480px) {
-    .recruit_date {
-        max-width: 85%;
-        padding: 10px;
-    }
-
-    .recruit_date_div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; 
-        justify-items: center;
-    }
-
-    .recruit_date_box {
-        width: 100%; 
-        max-width: 140px; 
-        border-left: 5px solid #3274D9;
-        border-top: none;
-        text-align: left;
-        padding-left: 10px;
-        padding-top: 5px;
-    }
-
-    .recruit_date_content_bold,
-    .recruit_date_content_medium {
-        text-align: left;
-        font-size: 0.8rem;
-    }
-
-    .recruit_date_title {
-        font-size: 1.1rem; 
-        margin-bottom: 30px; 
-        margin-left: 10px;
-    }
+.recruit_date_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
 }
 
 @media (max-width: 1024px) {
     /* 1024px 이하에서 구성품들이 잘리지 않고 한 줄에 나열되도록 설정 */
     .recruit_date {
         max-width: 90%;
-        padding: 10px;
+        /* padding: 10px; */
     }
 
     .recruit_date_div {
         flex-wrap: nowrap; /* 한 줄로 나열되도록 설정 */
         justify-content: space-between; /* 각 항목 사이의 간격을 조정 */
         gap: 20px; /* 간격을 줄여서 한 줄에 4개가 보이도록 설정 */
+        width: 92%;
     }
 
     .recruit_date_box {
-        width: 22%; /* 한 줄에 4개가 나올 수 있도록 너비 설정 */
-        padding: 8px;
-        border-top: 2px solid #3274D9;
+        /* width: 22%; */
+        /* padding: 8px; */
+        /* border-left: 2px solid #3274D9; */
     }
 
     .recruit_date_content_bold {
@@ -150,4 +101,86 @@
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 768px) {
+
+    .recruit_date_title{
+        margin-bottom: 7%;
+        font-size: 1.4rem;
+    }
+
+    .recruit_date {
+        /* max-width: 90%; */
+        /* padding: 10px; */
+    }
+
+    .recruit_date_div {
+        flex-wrap: nowrap; /* 항목들이 한 줄로 나열되도록 설정 */
+        justify-content: space-between; /* 각 항목 사이의 간격을 적절하게 조정 */
+        width: 95%;
+        /* gap: 25px; */
+    }
+
+    .recruit_date_box {
+        padding-left: 20px;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* width: 100%; */
+        /* /* width: 22%; */
+        /* padding: 8px; */
+        /* border-top: 2px solid #3274D9; */
+    }
+
+    .recruit_date_content_bold {
+        font-size: 1rem; 
+    }
+
+    .recruit_date_content_medium, .recruit_date_box {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .recruit_date {
+        /* max-width: 85%; */
+        /* padding: 10px; */
+    }
+    .recruit_date_container {
+        gap: 0.3em;
+    }
+
+    .recruit_date_div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        /* justify-items: center; */
+    }
+
+    .recruit_date_box {
+        /* width: 100%;  */
+        /* max-width: 140px;  */
+        border-left: 5px solid #3274D9;
+        border-top: none;
+        /* text-align: left; */
+        /* padding-left: 10px; */
+        /* padding-top: 5px; */
+    }
+
+    .recruit_date_content_bold,
+    .recruit_date_content_medium,
+    .recruit_date_box {
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .recruit_date_title {
+        font-size: 1.1rem; 
+        /* margin-bottom: 30px;  */
+        /* margin-left: 10px; */
+    }
+}
+
+
 

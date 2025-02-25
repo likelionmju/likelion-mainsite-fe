@@ -1,20 +1,22 @@
 .yearly-plan {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 1300px; 
+  width: 80%;
+  /* max-width: 1300px;  */
   margin: 0 auto;
   /* padding: 30px; */
 }
 
 .title-text {
   font-weight: bold;
-  margin-left: 100px;
+  /* margin-left: 100px; */
   text-align: left;
   color: #3274D9;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  margin-bottom: 3%;
 }
 
 .semester {
@@ -49,6 +51,7 @@
 
   .title-text {
       font-size: 1.2rem;
+      margin-bottom: 7%;
   }
 }
 
@@ -64,7 +67,7 @@
   }
 
   .title-text {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
   }
 }
 
@@ -87,9 +90,10 @@
   }
   
   .title-text {
-      font-size: 0.9rem;
-      margin-left: 40px; 
-      font-weight: 500;
+      font-size: 1.1em;
+      /* font-size: 0.9rem; */
+      /* margin-left: 40px;  */
+      /* font-weight: 500; */
   }
 
   .semester-header {

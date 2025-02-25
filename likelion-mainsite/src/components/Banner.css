@@ -12,7 +12,7 @@ html, body {
     width: 100vw;
     overflow: hidden;
     background-size: 100% auto;
-    position: relative;
+    /* position: relative; */
 }
 
 .banner_title_container {
@@ -31,23 +31,38 @@ html, body {
     font-size: 4.5rem;
     font-weight: bold;
     line-height: 110%;
-    margin-top: 15rem;
+    /* margin-top: 15rem; */
+    margin-top: 10%;
     padding: 0;
     text-align: center;
-    position: relative;
-    z-index: 2; 
+    /* position: relative; */
+    /* z-index: 2;  */
     animation: slide-up 1.2s ease-in-out;
+}
+
+.character-img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.character_box {
+    position: relative;
 }
 
 .character-background {
     background-color: #004A99;
     filter: blur(1.1em);
-    width: 230px; 
-    height: 230px;
+    width: 210px; 
+    height: 210px;
     border-radius: 50%;
     position: absolute;
-    top: 16%; 
-    left: 42%;
+    top: -15%;
+    left: -15%;
+    /* top: 17%;  */
+    /* left: 43%; */
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: pulse 3s infinite ease-in-out;
@@ -55,12 +70,12 @@ html, body {
 
 
 .character {
-    width: 180px; 
+    width: 160px; 
     height: auto;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* position: absolute; */
+    /* top: 30%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     z-index: 2;
     animation: fade-in 1.5s ease-in-out;
 }
@@ -86,24 +101,31 @@ html, body {
 
 /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
 @media (max-width: 768px) {
+
+    .banner_title_container {
+        margin-top: 20%;
+    }
+
     .banner_title {
         font-size: 3.5rem; /* 제목 폰트 크기 줄이기 */
         margin-top: 10vh; /* 상단 여백 줄이기 */
     }
 
     .character-background {
-        width: 40vw; /* 화면 크기에 맞게 너비 조정 */
-        height: 40vw; /* 화면 크기에 맞게 높이 조정 */
-        position: absolute;
-        bottom: 90%; 
-        left: 30%;
+        width: 40vw; 
+        height: 40vw; 
+        left: -20%;
+        top: -16%;
+        /* position: absolute; */
+        /* bottom: 90%;  */
+        /* left: 30%; */
     }
 
     .character {
-        width: 30vw; /* 화면 크기에 맞게 크기 조정 */
-        position: absolute;
-        top: 90%;
-        left: 50%;
+        width: 30vw; 
+        /* position: absolute; */
+        /* top: 90%; */
+        /* left: 50%; */
     }
 
     .button {
@@ -121,18 +143,18 @@ html, body {
     }
 
     .character-background {
-        width: 50vw; /* 화면 크기에 맞게 너비와 높이 조정 */
-        height: 50vw; 
-        position: absolute;
-        top: 33%; 
-        left: 25%;
+        /* width: 50vw; */
+        /* height: 50vw;  */
+        /* position: absolute; */
+        /* top: 33%;  */
+        /* left: 25%; */
     }
 
     .character {
-        width: 40vw; /* 캐릭터 크기 더 줄이기 */
-        position: absolute;
-        top: 45%;
-        left: 50%;
+        /* width: 40vw; */
+        /* position: absolute; */
+        /* top: 45%; */
+        /* left: 50%; */
     }
 
     .button {

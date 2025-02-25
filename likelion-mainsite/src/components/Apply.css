@@ -50,6 +50,7 @@
     font-weight: 500;
     line-height: 2.16563rem; /* 86.625% */
     cursor: pointer;
+    animation: fade-in 1s ease-in-out;
     /* position: absolute; */
     /* top: 70%; */
     /* left: 50%; */
@@ -110,14 +111,15 @@
         flex-direction: column; /* 세로로 배치 */
         justify-content: flex-start; /* 상단부터 배치 */
         align-items: center;
-        margin-top: 90%; /* 화면에서 50% 위치로 배치 */
-        height: 50%; /* 컨테이너 높이를 50%로 설정 */
+        margin-top: 25vh;
+        /* margin-top: 90%; */
+        /* height: 50%;  */
     }
 
     .apply-btn {
         margin-top: 20px; /* 버튼과 다른 요소 사이의 간격 설정 */
-        width: 23rem;
-        height: 3.8rem;
+        /* width: 23rem; */
+        /* height: 3.8rem; */
         font-size: 1.3rem;
         border-radius: 0.1rem;
     }
@@ -125,13 +127,13 @@
 
 @media (max-width: 480px) {
     .apply-container {
-        height: 60%; /* 더 작은 화면에서는 버튼을 더 아래에 배치 */
-        margin-top: 80%; /* 여백을 30%로 설정하여 더 적당한 위치로 배치 */
+        /* height: 60%;  */
+        /* margin-top: 80%; */
     }
 
     .apply-btn {
         width: 70%;
-        height: 3.5rem;
+        height: 3rem;
         font-size: 1rem;
         border-radius: 0.1rem;
     }
