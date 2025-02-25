@@ -65,14 +65,14 @@
     }
 
     .recruit_date_div {
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 10px;
+        flex-wrap: nowrap; /* 항목들이 한 줄로 나열되도록 설정 */
+        justify-content: space-between; /* 각 항목 사이의 간격을 적절하게 조정 */
+        gap: 10px; /* 간격을 더 좁게 설정 */
     }
 
     .recruit_date_box {
-        width: 42%; 
-        padding: 8px; 
+        width: 22%; /* 한 줄에 4개가 나올 수 있도록 너비 설정 */
+        padding: 8px;
         border-top: 2px solid #3274D9;
     }
 
@@ -84,6 +84,8 @@
         font-size: 0.9rem;
     }
 }
+
+
 
 @media (max-width: 480px) {
     .recruit_date {
@@ -118,6 +120,34 @@
         font-size: 1.1rem; 
         margin-bottom: 30px; 
         margin-left: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* 1024px 이하에서 구성품들이 잘리지 않고 한 줄에 나열되도록 설정 */
+    .recruit_date {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .recruit_date_div {
+        flex-wrap: nowrap; /* 한 줄로 나열되도록 설정 */
+        justify-content: space-between; /* 각 항목 사이의 간격을 조정 */
+        gap: 20px; /* 간격을 줄여서 한 줄에 4개가 보이도록 설정 */
+    }
+
+    .recruit_date_box {
+        width: 22%; /* 한 줄에 4개가 나올 수 있도록 너비 설정 */
+        padding: 8px;
+        border-top: 2px solid #3274D9;
+    }
+
+    .recruit_date_content_bold {
+        font-size: 1rem;
+    }
+
+    .recruit_date_content_medium {
+        font-size: 0.9rem;
     }
 }
 
