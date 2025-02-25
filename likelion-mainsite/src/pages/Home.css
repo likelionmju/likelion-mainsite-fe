@@ -15,14 +15,16 @@
 
 .section {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .section.visible {
+    transform: translateY(80px); 
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+    will-change: opacity, transform;
+}
+
+.section.visible {
     opacity: 1;
     transform: translateY(0);
-  }  
+}
+
 
 Footer {
     margin-top: auto;
