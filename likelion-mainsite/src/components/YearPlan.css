@@ -1,20 +1,22 @@
 .yearly-plan {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 1300px; 
+  width: 80%;
+  /* max-width: 1300px;  */
   margin: 0 auto;
   /* padding: 30px; */
 }
 
 .title-text {
   font-weight: bold;
-  margin-left: 100px;
+  /* margin-left: 100px; */
   text-align: left;
   color: #3274D9;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  margin-bottom: 3%;
 }
 
 .semester {
@@ -41,17 +43,34 @@
 @media (max-width: 768px) {
   .semester {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(4, 1fr); /* 4개의 항목을 한 줄에 나열 */
+      gap: 20px; /* 간격을 적당히 좁게 설정 */
       justify-content: center;
-      width: 90%; 
+      width: 100%; 
   }
+
   .title-text {
       font-size: 1.2rem;
+      margin-bottom: 7%;
   }
 }
 
-/* 📌 모바일 (480px 이하) */
+/* 태블릿과 그 이상 화면 크기에서 4개가 한 줄에 나오도록 */
+@media (max-width: 1024px) {
+  .semester {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4개의 항목을 한 줄에 나열 */
+      gap: 30px; /* 간격을 더 넓게 설정 */
+      justify-content: center;
+      width: 100%; 
+      padding: 0 20px; /* 양옆에 패딩 추가 */
+  }
+
+  .title-text {
+      font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 480px) {
   .semester-wrapper {
     display: flex;
@@ -71,9 +90,10 @@
   }
   
   .title-text {
-      font-size: 0.9rem;
-      margin-left: 40px; 
-      font-weight: 500;
+      font-size: 1.1em;
+      /* font-size: 0.9rem; */
+      /* margin-left: 40px;  */
+      /* font-weight: 500; */
   }
 
   .semester-header {

@@ -12,7 +12,9 @@ const Banner = ({character}) => {
                 <div className='banner_title_box'>
                     <div className='character_container'>
                         <div className='character_box'>
-                            <img className="character" src={character} />
+                            <div className='character-img-container'>
+                                <img className="character" src={character} />
+                            </div>
                             <div className='character-background'></div>
                         </div>
 
@@ -20,8 +22,8 @@ const Banner = ({character}) => {
                         {/* <p className="banner_title">LIKELION MJU</p> */}
 
                     </div>
-                    <p className="banner_title">LIKELION MJU</p>
                 </div>
+                <p className="banner_title">LIKELION MJU</p>
             </div>
             {/* <img className="character" src={character} />
             <p className="banner_title">LIKELION MJU</p> */}

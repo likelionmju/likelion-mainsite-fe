@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20% 0 10%;
+    margin: 2% 0 10%;
 }
 
 .apply-btn {
@@ -37,21 +37,20 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    border-radius: 1.3125rem;
+    border-radius: 0.2rem;
     border: none;
     background: #3383FE;
     width: 30rem;
     height: 4rem;
     color: #FFF;
     text-align: center;
-    /* font-family: Inter; */
-    font-family: Pretendard;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-style: normal;
     /* font-weight: 700; */
     font-weight: 500;
     line-height: 2.16563rem; /* 86.625% */
     cursor: pointer;
+    animation: fade-in 1s ease-in-out;
     /* position: absolute; */
     /* top: 70%; */
     /* left: 50%; */
@@ -105,24 +104,37 @@
     }
 }  */
 
+/* 모바일 버전에서 화면 크기에 맞게 적용 */
 @media (max-width: 768px) {
     .apply-container {
-        margin-top: 75%;
+        display: flex;
+        flex-direction: column; /* 세로로 배치 */
+        justify-content: flex-start; /* 상단부터 배치 */
+        align-items: center;
+        margin-top: 25vh;
+        /* margin-top: 90%; */
+        /* height: 50%;  */
     }
-    
+
     .apply-btn {
-        width: 23rem;
-        height: 3.5rem;
+        margin-top: 20px; /* 버튼과 다른 요소 사이의 간격 설정 */
+        /* width: 23rem; */
+        /* height: 3.8rem; */
         font-size: 1.3rem;
-        border-radius: 1rem;
+        border-radius: 0.1rem;
     }
 }
 
 @media (max-width: 480px) {
+    .apply-container {
+        /* height: 60%;  */
+        /* margin-top: 80%; */
+    }
+
     .apply-btn {
-        width: 55%;
-        height: 2rem;
-        font-size: 0.8rem;
-        border-radius: 0.6rem;
+        width: 70%;
+        height: 3rem;
+        font-size: 1rem;
+        border-radius: 0.1rem;
     }
 }

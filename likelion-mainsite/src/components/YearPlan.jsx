@@ -21,9 +21,7 @@ function YearPlan() {
   return (
 
     <div className="yearly-plan">
-        <div className="title-text">
-            <h3>연간 일정</h3>
-        </div>
+        <div className="title-text">연간 일정</div>
         <div className="semester-wrapper">
           <div className="semester">
           {scheduleData.map((semester, index) => (
