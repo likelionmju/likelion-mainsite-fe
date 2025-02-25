@@ -12,6 +12,7 @@ import { strictEmailRegex, numberRegex, studentNumberRegex, phoneNumberRegex } f
 const RecruitPage = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
   // 중복 검사 상태
   const [isDuplicate, setIsDuplicate] = useState(null);
@@ -211,8 +212,8 @@ const RecruitPage = () => {
     try {
       const response = await axiosInstance.post("/api/forms/submit", userData);
       console.log("지원 폼 제출 성공:", response.data);
+      setIsSubmissionSuccessful(true);
       setIsOpen(false); 
-      navigate("/"); 
     } catch (error) {
       console.error("지원 폼 제출 실패:", error);
 
@@ -670,6 +671,25 @@ const RecruitPage = () => {
           </div>
         </div>
       )}
+      {/* 제출 성공 안내 모달 */}
+      {isSubmissionSuccessful && (
+        <div className="modal-overlay" onClick={() => setIsSubmissionSuccessful(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-body">
+              <div className="modal-title">지원서 제출 완료 🅾️</div>
+              <div className="modal-message">
+                지원서 제출이 성공적으로 완료되었습니다.
+              </div>
+            </div>
+            <div className="modal-actions">
+              <button className="submit-btn" onClick={() => navigate("/")}>
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+)}
+
         </div>
       </div>
       <Footer />
