@@ -21,8 +21,8 @@ import heart_icon from "../assets/heart_icon.svg";
 // import Banner from '@/components/Banner';
 // import Introduction from '@/components/Introduction';
 import Schedule from '@/components/Schedule';
-import recruit_date_line from "../assets/recruit_date_line.svg";
-import RecruitDate from '@/components/RecruitDate';
+// import recruit_date_line from "../assets/recruit_date_line.svg";
+// import RecruitDate from '@/components/RecruitDate';
 import Banner from '@/components/Banner.jsx';
 import Introduction from '@/components/Introduction';
 
