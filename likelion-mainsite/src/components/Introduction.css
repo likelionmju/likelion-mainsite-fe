@@ -1,7 +1,7 @@
 .introduction-container {
     width: 85%;
     margin: 0 auto;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
 }
 
 .introduction-title {
@@ -12,8 +12,9 @@
 }
 
 .introduction-subtitle {
+    display: flex;
     color: white;
-    line-height : 1.7em;
+    line-height : 2.3em;
     margin-bottom: 3%;
 }
 
@@ -21,6 +22,7 @@
     width: 90%;
     display: flex;
     margin: 0 auto;
+    gap: 1em;
     /* margin-bottom: 10%; */
 }
 
@@ -29,10 +31,15 @@
     visibility: hidden;
 }
 
+.introduction-subtitle-mobile {
+    display: none;
+    visibility: hidden;
+}
+
 @media (max-width: 768px){
     
     .introduction-container {
-        margin-bottom: 10%;
+        /* margin-bottom: 10%; */
     }
 
     .introduction-box-list-container{
@@ -55,14 +62,25 @@
     }
     .introduction-subtitle {
         font-size: 1rem;
+        margin-bottom: 5%;
     }
 } 
 
 @media (max-width: 480px){
+    .introduction-subtitle-mobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .introduction-subtitle-desktop {
+        display: none;
+        visibility: hidden;
+    }
+        
     .introduction-title {
         font-size: 1.1rem;
     }
     .introduction-subtitle {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
     }
 }

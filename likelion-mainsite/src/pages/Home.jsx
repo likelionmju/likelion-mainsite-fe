@@ -26,6 +26,8 @@ import Schedule from '@/components/Schedule';
 import Banner from '@/components/Banner.jsx';
 import Introduction from '@/components/Introduction';
 
+// https://tarot-story.tistory.com/34
+
 const Home = () => {
 	return (
 		<div className="Home">
