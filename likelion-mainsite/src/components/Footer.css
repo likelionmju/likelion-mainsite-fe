@@ -39,6 +39,12 @@ footer img {
     gap: 20px;
 }
 
+.insta_icon {
+    pointer-events: auto; 
+    z-index: 9999;
+    position: relative;
+}
+
 @media (max-width: 768px) {
     footer {
         padding: 15px; 

@@ -18,13 +18,17 @@ const Footer = () => {
             </div> */}
             <div className="copyright_wrapper">
                 <p>© likelion_MJU | All rights reserved.</p>
-                <a 
+                {/* <a 
                     href="https://www.instagram.com/likelion_mju" 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        window.open("https://www.instagram.com/likelion_mju", "_blank");
+                      }}
                 >
                     <img className="insta_icon" src={insta_icon} alt="인스타 아이콘" />
-                </a>
+                </a> */}
             </div>
 		</footer>
 	);
