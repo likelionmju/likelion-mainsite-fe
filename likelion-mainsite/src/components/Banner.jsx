@@ -3,6 +3,7 @@ import Apply from './Apply';
 import './Banner.css';
 import Header from './Header';
 import Introduction from './Introduction';
+import maheung from '@/assets/maheung.svg';
 
 const Banner = ({character}) => {
     return (
@@ -13,7 +14,7 @@ const Banner = ({character}) => {
                     <div className='character_container'>
                         <div className='character_box'>
                             <div className='character-img-container'>
-                                <img className="character" src={character} />
+                                <img className="character" src={maheung} />
                             </div>
                             <div className='character-background'></div>
                         </div>
