@@ -11,7 +11,7 @@ const AdminPage = () => {
     // 로그아웃 핸들러
     const handleLogout = () => {
         sessionStorage.removeItem("isAuthenticated");
-        navigate("/adminlogin");
+        navigate("/livslogin");
     };
 
     // 지원서 조회 핸들러
@@ -63,7 +63,7 @@ const AdminPage = () => {
     };
 
     return (
-        <div className="admin-container">
+        <div className="admin-container" style={{backgroundColor : "white"}}>
             <h2 className="admin-title">관리자 페이지</h2>
 
             {/* 지원서 ID 입력 */}
