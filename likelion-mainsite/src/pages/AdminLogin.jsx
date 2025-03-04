@@ -16,14 +16,14 @@ const AdminLogin = () => {
     // 입력값과 환경변수 비교
     if (email === adminEmail && password === adminPassword) {
       sessionStorage.setItem("isAuthenticated", "true"); 
-      navigate("/admin");
+      navigate("/livs");
     } else {
       alert("이메일 또는 비밀번호가 틀렸습니다.");
     }
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" style={{backgroundColor : "white"}}>
       <h2 className="login-title">관리자 로그인</h2>
       <form onSubmit={handleLogin}>
         <input
