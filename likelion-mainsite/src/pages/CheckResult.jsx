@@ -84,9 +84,9 @@ const CheckResult = () => {
           <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="modal-body">
-                <div className="modal-title">조회 불가 기간 ⚠️</div>
+                <div className="modal-title">조회 불가 시간 ⚠️</div>
                 <div className="modal-message">
-                3월 10일 이후부터 조회 가능합니다
+                금일 18:00 이후부터 조회 가능합니다
                   {/* <p>⚠️ 서류 합격 결과는</p>
                   <p>3월 10일 이후부터 조회 가능합니다</p> */}
                 </div>
