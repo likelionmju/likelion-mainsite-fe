@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Recruit.css';
@@ -13,6 +13,17 @@ const RecruitPage = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
+  const [isPeriodOver, setIsPeriodOver] = useState(false); // 지원 기간 종료 여부 상태
+
+  // 현재 날짜를 가져와 지원 기간과 비교
+  useEffect(() => {
+    const today = new Date();
+    const endDate = new Date('2025-03-09T23:59:59');
+
+    if (today > endDate) {
+      setIsPeriodOver(true); // 지원 기간이 지나면 상태 변경
+    }
+  }, []);
 
   // 중복 검사 상태
   const [isDuplicate, setIsDuplicate] = useState(null);
@@ -689,9 +700,26 @@ const RecruitPage = () => {
           </div>
         </div>
 )}
-
         </div>
       </div>
+      {/* 지원 기간 종료 모달 (기존 내용 유지하면서 모달만 띄움) */}
+  {isPeriodOver && (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <div className="modal-body">
+          <div className="modal-title">⚠️ 지원 기간 종료</div>
+          <div className="modal-message">
+            지원 기간이 종료되었습니다. 더 이상 지원할 수 없습니다 😢
+          </div>
+        </div>
+        <div className="modal-actions">
+          <button className="submit-btn" onClick={() => navigate("/")}>
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
       <Footer />
     </div>
 );
