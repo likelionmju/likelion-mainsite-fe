@@ -61,34 +61,32 @@ const CheckResult = () => {
           </button>
         </div>
 
-        {/* 에러 메시지 출력 */}
-        {/* {error && <p className="error-message">{error}</p>} */}
+        {/* 에러 메시지 */}
+        {error && <p className="error-message">{error}</p>}
 
-        {/* 조회 결과 출력 */}
-        {/* {resultData && (
+        {/* 결과 출력 */}
+        {resultData && (
           <div className="result-container">
             <h3>결과 확인</h3>
-            <p><strong>이름:</strong> {resultData.name}</p>
+            <p><strong>이름 :</strong> {resultData.name}</p>
             <p>
               <strong>합격 여부 : </strong> 
-              {resultData.passStatus === null 
-                ? " ⚠️ 서류 합격 여부는 3.10 이후부터 확인 가능합니다" 
-                : resultData.passStatus 
-                  ? " ✅ 합격" 
-                  : " ❌ 불합격"}
+              {resultData.passStatus 
+                  ? " ✅ 합격 - 축하드립니다 면접 전형에서 뵙겠습니다 🦁🧡" 
+                  : " ❌ 불합격 - 아쉬운 소식을 전해드리게 되어 매우 유감입니다 😢 지원자분의 역량은 뛰어나나 지원자 수가 많아 상대적으로 서류를 조금 더 잘 작성해주신 분께 합격 소식을 전해드리게 되었습니다. 명지대학교 멋쟁이사자처럼에 관심 가져주시고 지원해주셔서 다시 한 번 정말 감사드리며 14기 지원 때 다시 뵙기를 고대하겠습니다 🙇🏻‍♀️"}
             </p>
           </div>
-        )} */}
+        )}
                 {/* 조회 기간이 아닌 경우 모달 */}
-                {isModalOpen && (
+                {/* {isModalOpen && (
           <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="modal-body">
                 <div className="modal-title">조회 불가 기간 ⚠️</div>
                 <div className="modal-message">
                 3월 10일 이후부터 조회 가능합니다
-                  {/* <p>⚠️ 서류 합격 결과는</p>
-                  <p>3월 10일 이후부터 조회 가능합니다</p> */}
+                  <p>⚠️ 서류 합격 결과는</p>
+                  <p>3월 10일 이후부터 조회 가능합니다</p>
                 </div>
               </div>
               <div className="modal-actions">
@@ -98,7 +96,7 @@ const CheckResult = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <Footer />
     </div>
