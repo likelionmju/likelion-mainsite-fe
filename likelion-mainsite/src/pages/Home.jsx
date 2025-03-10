@@ -30,18 +30,18 @@ const Home = () => {
     ];
 
     const observerOptions = {
-      root: null, 
-      threshold: 0.2, 
+      root: null, // 뷰포트를 기준으로 감지
+      threshold: 0.2, // 20% 이상 보여야 감지
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const targetElement = entry.target; 
-          if (targetElement instanceof HTMLElement) { 
+          const targetElement = entry.target; // 👈 entry.target을 별도 변수에 저장
+          if (targetElement instanceof HTMLElement) { // 👈 dataset을 안전하게 사용하기 위한 체크
             setVisibleSections((prev) => ({
               ...prev,
-              [targetElement.dataset.section]: true,
+              [targetElement.dataset.section]: true, // 🎯 dataset.section 오류 해결!
             }));
           }
         }
@@ -51,12 +51,12 @@ const Home = () => {
 
     sections.forEach(({ ref, key }) => {
       if (ref.current) {
-        ref.current.dataset.section = key; 
+        ref.current.dataset.section = key; // 데이터 속성 추가
         observer.observe(ref.current);
       }
     });
 
-    return () => observer.disconnect(); 
+    return () => observer.disconnect(); // 컴포넌트 언마운트 시 Observer 해제
   }, []);
 
   return (

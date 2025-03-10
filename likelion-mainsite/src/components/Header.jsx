@@ -21,7 +21,7 @@ const Header = () => {
     };
 
     const handleResult = () => {
-        navigate('/result');
+        navigate('/checkresult');
     };
 
 	return (
