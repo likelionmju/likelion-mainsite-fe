@@ -77,24 +77,6 @@ const CheckResult = () => {
             </p>
           </div>
         )}
-                
-                {/* {isModalOpen && (
-          <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <div className="modal-body">
-                <div className="modal-title">조회 불가 기간 ⚠️</div>
-                <div className="modal-message">
-                3월 10일 이후부터 조회 가능합니다
-                </div>
-              </div>
-              <div className="modal-actions">
-                <button className="submit-btn" onClick={() => setIsModalOpen(false)}>
-                  확인
-                </button>
-              </div>
-            </div>
-          </div>
-        )} */}
       </div>
       <Footer />
     </div>
