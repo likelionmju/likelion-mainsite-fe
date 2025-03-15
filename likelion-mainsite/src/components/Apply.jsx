@@ -6,12 +6,12 @@ const Apply = () => {
     const navigate = useNavigate();
 
     const handleApply = () => {
-        navigate('/checkresult');
+        navigate('/result');
     };
 
     return (
         <div className='apply-container'>
-            <button className="apply-btn" onClick={handleApply}>13기 서류 합격 바로가기</button>
+            <button className="apply-btn" onClick={handleApply}>13기 최종 합격 바로가기</button>
         </div>
     );
 };
