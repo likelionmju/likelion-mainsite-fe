@@ -14,7 +14,7 @@ const CheckResult = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTimeRestricted, setIsTimeRestricted] = useState(false);
 
-  const startTime = new Date("2025-03-15T18:01:00");
+  const startTime = new Date("2025-03-15T18:10:00");
   const endTime = new Date("2025-12-31T23:59:59");
 
   useEffect(() => {
